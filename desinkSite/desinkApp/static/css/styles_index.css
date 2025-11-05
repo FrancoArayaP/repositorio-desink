@@ -1,0 +1,1226 @@
+/* Reset y base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+    background-color: #f1efff;
+    color: #20195a;
+  }
+
+  /* Colores usados */
+  :root {
+    --color-purple-light: #8366f6;
+    --color-purple-dark: #20195a;
+    --color-pink: #f58270;
+    --color-pink-light: #f7b0a8;
+    --color-bg-button: #8366f6;
+  }
+
+  /* Contenedor general */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 30px;
+  }
+
+  /* Header y nav */
+  header {
+    background-color: var(--color-purple-light);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  header button {
+    border: none;
+    background-color: var(--color-pink);
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  header button:focus {
+    outline: 2px solid var(--color-purple-dark);
+  }
+
+  /* Sección principal (hero) */
+  .hero {
+    display: flex;
+    gap: 30px;
+    background-color: #f1efff;
+    padding: 25px 0;
+    align-items: flex-start;
+  }
+  .hero img {
+    flex:0 0 200px;
+    border-radius: 12px;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    background-color: #8dbf63;
+  }
+  .hero-content {
+    flex: 1;
+  }
+  .hero-content .title {
+    background-color: var(--color-pink);
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 6px;
+    width: fit-content;
+    padding: 5px 10px;
+    margin-bottom: 6px;
+  }
+  .hero-content .subtitle {
+    background-color: var(--color-pink);
+    font-weight: 400;
+    font-size: 16px;
+    border-radius: 6px;
+    color: white;
+    margin-bottom: 18px;
+  }
+  .hero-content .line {
+    height: 10px;
+    background-color: var(--color-pink);
+    border-radius: 10px;
+    margin: 30px 0;
+    margin-bottom: 20px 0 40px;
+  }
+  .line.short {
+    width: 68%;
+  }
+  .line.medium {
+    width: 90%;
+  }
+  .hero-content .toggle-purple {
+    background-color: var(--color-purple-light);
+    width: 500px;
+    height: 35px;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 18px;
+  }
+  .toggle-purple .circle {
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  .hero-content .buttons {
+    display: flex;
+    gap: 15px;
+  }
+  .hero-content .button-sm {
+    background-color: var(--color-purple-light);
+    height: 28px;
+    width: 300px;
+    margin-top: 30px;
+    border-radius: 6px;
+  }
+
+  /* Barra larga toggle */
+  .long-toggle {
+    background-color: var(--color-purple-light);
+    width: 750px;
+    height: 35px;
+    border-radius: 8px;
+    position: relative;
+    margin: 30px 100px;
+  }
+  .long-toggle .circle {
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+  }
+
+  /* Categorías */
+  /* Reset y básicos */
+* {
+  box-sizing: border-box;
+}
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Colores utilizados */
+:root {
+  --dark-purple: #2c2376;
+  --purple: #8961e9;
+  --coral: #f2756e;
+  --white: #f3f0f9;
+  --light-purple: #b29aff;
+}
+
+/* Sección categorías */
+.categories-section,
+.portfolios-section,
+.before-after-section,
+.what-business-needs-section {
+  background: var(--white);
+  padding: 1rem 1.5rem;
+  position: relative;
+}
+
+/* Título secciones */
+.section-title {
+  background-color: var(--dark-purple);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  text-transform: lowercase;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+/* Categorías Carousel */
+.carousel-container {
+  display: flex;
+  overflow-x: hidden; /* Oculta el scrollbar */
+  gap: 1rem;
+}
+
+/* Ocultar scrollbar */
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+.carousel-container {
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+}
+
+.carousel-item {
+  min-width: 300px;
+  background: var(--purple);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(60, 30, 180, 0.2);
+  flex-shrink: 0;
+  color: var(--white);
+  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+.carousel-item {
+  border: 4px solid transparent;
+  transition: border-color 0.4s ease-in-out;
+}
+.carousel-item.active {
+  border-color: #75c1e3;
+}
+
+.carousel-item.dark-purple {
+  background: var(--dark-purple);
+}
+
+.carousel-item.coral {
+  background: var(--coral);
+}
+
+/* Texto y toggle dentro de las cards categorías */
+.text-content {
+  padding: 0.6rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text-content h4 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  color: inherit;
+}
+.text-content p {
+  margin: 0.2rem 0 0.8rem;
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: rgba(255 255 255 / 0.8);
+}
+
+/* Switch toggle */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 16px;
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #bbb;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 1px;
+  bottom: 1px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+input:checked + .slider {
+  background-color: var(--white);
+}
+input:checked + .slider:before {
+  transform: translateX(16px);
+}
+
+/* Placeholder imagen */
+.image-placeholder {
+  height: 110px;
+  background: linear-gradient(to top, #658d3c 60%, #ade59a 100%);
+  border-radius: 0 0 10px 10px;
+}
+
+.image-placeholder img {
+  flex: 0 0 350px;
+  width: 100%;
+  height: 110px;
+  object-position: center; /* centra la parte visible */
+  
+}
+
+/* Flecha del carousel */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  background: var(--coral);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  font-size: 26px;
+  line-height: 38px;
+  text-align: center;
+  user-select: none;
+  box-shadow: 0 0 6px rgba(242, 117, 110, 0.8);
+  z-index: 10;
+}
+.carousel-arrow:hover {
+  background: #de584c;
+}
+
+/* Portafolios sección */
+.portfolios-section {
+  padding-top: 0.5rem;
+}
+
+.filter-menu {
+  margin: 0.5rem 0 1rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.filter-menu button {
+  background: var(--dark-purple);
+  color: white;
+  padding: 0.3rem 0.9rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  text-transform: lowercase;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+  gap: 1rem;
+}
+
+.portfolio-item {
+  background: var(--purple);
+  border-radius: 8px;
+  height: 140px;
+  box-shadow: 0 0 3px rgba(60,30,180,0.3);
+}
+
+/* Antes y después */
+
+.before-after-section {
+  padding: 1rem 0 2rem;
+  position: relative;
+}
+
+.before-after-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+.before-after-wrapper {
+  display: flex;
+  transition: transform 0.4s ease;
+  gap: 1rem;
+  width: 100%;
+}
+
+.before-after-slide {
+  display: flex;
+  gap: .75rem;
+  min-width: 100%;
+  border-radius: 10px;
+}
+
+.image-before {
+  flex: 1;
+  border-radius: 12px;
+  background: linear-gradient(to top, #658d3c 60%, #ade59a 100%);
+  min-height: 200px;
+}
+
+/* Info de la derecha */
+.info-before-after {
+  flex: 1;
+  background-color: var(--dark-purple);
+  border-radius: 10px;
+  padding: 15px;
+  color: var(--coral);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  overflow-y: auto;
+  max-height: 200px;
+}
+.extra-info {
+  flex: 0.45;
+  background-color: var(--purple);
+  color: var(--coral);
+  font-size: 13px;
+  padding: 1rem 0.7rem;
+  border-radius: 10px;
+}
+
+.nav-dot {
+  position: relative;
+  top: 10px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--coral);
+  border: none;
+  opacity: 0.4;
+  margin-right: 6px;
+}
+.nav-dot.active {
+  opacity: 1;
+}
+
+/* Flecha antes y después */
+.before-after-carousel .carousel-arrow.next {
+  right: 5px;
+}
+
+/* Sección "lo que tu negocio necesita" */
+.what-business-needs-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.decorative-lines {
+  height: 5px;
+  background: linear-gradient(to right, var(--coral), var(--coral));
+  width: 10rem;
+  margin: 0.5rem auto 2rem;
+  border-radius: 30px;
+  box-shadow: 0 0 10px var(--coral);
+}
+
+.needs-card p {
+  /* Añade este color para el texto de las tarjetas moradas */
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 33px;
+  text-align: center;
+}
+
+.needs-card.pink {
+  background-color: var(--color-pink);
+  /* Cambia el color del texto de la tarjeta rosa */
+  color: var(--color-purple-dark);
+}
+.needs-card.pink .needs-toggle {
+  background-color: var(--color-purple-light);
+}
+
+.needs-card.pink .needs-toggle .purple-circle {
+  /* Este es el círculo de la tarjeta rosa, que debe ser oscuro */
+  background-color: var(--color-purple-dark);
+}
+
+/* Líneas de texto para las cards de "necesidades" */
+.needs-line-title {
+  height: 10px;
+  background-color: var(--color-pink);
+  border-radius: 6px;
+  width: 80%;
+  margin: 0 auto 8px;
+}
+
+.needs-line-text {
+  height: 8px;
+  background-color: var(--color-purple-dark);
+  border-radius: 6px;
+  width: 90%;
+  margin: 0 auto 20px;
+}
+
+.circle-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(to top, #658d3c 60%, #ade59a 100%);
+  margin-bottom: 1rem;
+}
+
+
+  /* Flecha derecha */
+  .arrow-right {
+    font-size: 40px;
+    color: var(--color-pink);
+    cursor: pointer;
+    margin-left: 15px;
+    user-select: none;
+  }
+
+  /* Sección valor en el mercado */
+  .market-section {
+    background-color: var(--color-purple-light);
+    color: white;
+    display: flex;
+    gap: 30px;
+    padding: 30px 40px;
+    border-radius: 8px;
+    margin-top: 40px;
+  }
+  .market-text {
+    flex: 1;
+  }
+  .market-title {
+    background-color: var(--color-purple-dark);
+    padding: 15px 15px;
+    border-radius: 6px;
+    text-align: center;
+    width: 300px;
+    height: 50px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .market-lines div {
+    height: 14px;
+    background-color: var(--color-purple-dark);
+    border-radius: 6px;
+    margin: 10px 0 30px;
+  }
+  .market-lines .line-short {
+    width: 80%;
+  }
+  .market-lines .line-medium {
+    width: 88%;
+  }
+  .market-toggle {
+    margin-top: 20px;
+    width: 200px;
+    height: 30px;
+    background-color: var(--color-pink);
+    border-radius: 8px;
+    position: relative;
+  }
+  .market-toggle .circle {
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+  }
+  .market-image {
+    width: 450px;
+    background-color: #8dbf63;
+    border-radius: 12px;
+    height: 260px;
+  }
+
+  .market-image img {
+  flex: 0 0 350px;
+  width: 100%;
+  height: 260px;
+  border-radius: 10px;
+  
+}
+
+  /* "Lo que tu negocio necesita" */
+  .needs-section {
+    margin: 50px 0 40px;
+    text-align: center;
+  }
+  .needs-header {
+    background-color: var(--color-purple-dark);
+    height: 40px;
+    width: 300px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px 8px;
+    display: inline-block;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+  .needs-lines {
+    
+    height: 7px;
+    margin: 0 auto 7px;
+    border-radius: 10px;
+  }
+  .needs-line1 {
+    width: 500px;
+    background-color: var(--color-pink);
+    margin-bottom: 10px;
+  }
+  .needs-line2 {
+    width: 400px;
+    background-color: var(--color-pink-light);
+    margin-bottom: 30px;
+  }
+
+  .needs-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 35px;
+  }
+  .needs-card {
+    border-radius: 10px;
+    padding: 25px 25px 20px;
+    width: 220px;
+    color: white;
+    position: relative;
+    cursor: pointer;
+  }
+  .needs-card.navy {
+    background-color: var(--color-purple-dark);
+  }
+  .needs-card.purple {
+    background-color: var(--color-purple-light);
+  }
+  .needs-card.pink {
+    background-color: var(--color-pink);
+    color: var(--color-purple-dark);
+  }
+  .needs-card img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #8dbf63;
+    margin: 0 auto 20px;
+    display: block;
+  }
+  .needs-card p {
+    font-size: 14px;
+    margin-bottom: 33px;
+    text-align: center;
+  }
+  .needs-toggle {
+    width: 60px;
+    height: 22px;
+    border-radius: 12px;
+    background-color: var(--color-pink);
+    position: absolute;
+    bottom: 15px;
+    left: calc(60% - 1px);
+  }
+  .needs-toggle .purple-circle {
+    background-color: var(--white);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+  }
+  .needs-card.pink .needs-toggle {
+    background-color: var(--color-purple-light);
+  }
+  .needs-card.pink .needs-toggle .purple-circle {
+    background-color: var(--white);
+  }
+
+  /* Portafolios */
+  .portafolios-header {
+    margin-bottom: 15px;
+  }
+  .portafolios-header .title-box {
+    background-color: var(--color-purple-dark);
+    color: white;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 6px;
+    width: fit-content;
+    margin-bottom: 15px;
+  }
+  .categories-filter {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 12px;
+  }
+  .categories-filter div {
+    background-color: var(--color-purple-dark);
+    height: 30px;
+    width: 220px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .categories-filter .long-filter {
+    width: 175px;
+  }
+  .portafolios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 55px;
+  }
+  .portfolio-card {
+    background-color: var(--color-purple-light);
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    border:#8366f6 10px solid;
+  }
+  .portfolio-image {
+    height: 150px;
+    background-color: var(--color-purple-dark);
+  }
+
+  .portfolio-image img {
+ flex: 0 0 350px;
+  width: 100%;
+  height: 150px;
+  object-position: center; /* centra la parte visible */
+ 
+}
+
+  .portfolio-info {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 12px;
+  }
+  .portfolio-avatar {
+    width: 35px;
+    height: 35px;
+    background-color: var(--color-pink);
+    border-radius: 50%;
+    
+  }
+.portfolio-avatar img {
+ flex: 0 0 350px;
+  width: 100%;
+  height: 35px;
+  border-radius: 50%;
+  object-position: center; /* centra la parte visible */
+ 
+}
+  
+  .portfolio-texts {
+  flex: 1;
+  /* Quita el fondo rosa que tapa el texto */
+  background-color: transparent;
+  height: auto;
+}
+
+.portfolio-texts h4 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 0 5px;
+  color: white;
+}
+
+.portfolio-texts p {
+  font-size: 12px;
+  margin: 0;
+  color: #ddd;
+}
+  .portfolio-dots {
+    width: 65px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: var(--color-pink);
+    display: flex;
+    gap: 6px;
+    justify-content: flex-end;
+    margin-left: 10px;
+  }
+  .portfolio-dots span {
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-pink);
+    border-radius: 50%;
+  }
+  .portfolio-dots span:nth-child(4) {
+    background-color: var(--color-purple-light);
+  }
+
+  /* Antes y después */
+  .antes-despues {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 80px;
+  }
+  .antes-despues .image-left {
+    background-color: #8dbf63;
+    width: 350px;
+    height: 260px;
+    border-radius: 14px;
+    position: relative;
+  }
+  .antes-despues .red-circle {
+    width: 22px;
+    height: 22px;
+    background-color: var(--color-pink);
+    border-radius: 50%;
+    position: absolute;
+    top: 18px;
+  }
+  .antes-despues .red-circle.left {
+    left: 16px;
+  }
+  .antes-despues .red-circle.right {
+    right: 16px;
+  }
+  .antes-despues .center-bottom-dots {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+  }
+  .antes-despues .center-bottom-dots span {
+    display: inline-block;
+    margin: 0 6px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-pink);
+    border-radius: 50%;
+  }
+  .antes-despues .center-bottom-dots span.active {
+    width: 14px;
+    height: 14px;
+  }
+  .antes-despues .code-section {
+    flex: 1;
+    background-color: var(--color-purple-dark);
+    border-radius: 14px;
+    padding: 20px;
+    color: white;
+    position: relative;
+  }
+  .antes-despues .code-section .top-bar {
+    height: 28px;
+    background-color: var(--color-purple-light);
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  .antes-despues .code-section .code-lines {
+    height: 160px;
+    border-radius: 8px;
+    background-color: var(--color-purple-light);
+    position: relative;
+    padding: 15px;
+  }
+  .antes-despues .code-section .line {
+    height: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .line.red {
+    background-color: var(--color-pink);
+  }
+  .line.lighter-red {
+    background-color: #f79f9a;
+  }
+  .line.blue {
+    background-color: #75c1e3;
+  }
+  .line.white {
+    background-color: #f6f7fb;
+  }
+  .antes-despues .code-section .right-panel {
+    background-color: var(--color-purple-light);
+    margin-top: 20px;
+    border-radius: 12px;
+    padding: 15px;
+  }
+  .antes-despues .code-section .toggle {
+    width: 35px;
+    height: 24px;
+    background-color: var(--color-purple-light);
+    border-radius: 12px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .antes-despues .code-section .toggle .circle {
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+  }
+  .antes-despues .arrow-right {
+    background-color: white;
+    color: var(--color-pink);
+    border-radius: 50%;
+    font-size: 35px;
+    line-height: 33px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+
+.carousel-track .image-left {
+  flex: 0 0 350px; /* mismo ancho que el contenedor */
+  height: 260px;
+  background-color: #8dbf63;
+  border-radius: 14px;
+  position: relative;
+}
+
+.image-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Recorta sin deformar */
+  border-radius: 14px;
+  display: block;
+}
+
+.center-bottom-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+.center-bottom-dots span {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.center-bottom-dots span.active {
+  background-color: #f58270;
+  transform: scale(1.2);
+}
+/*lines*/
+.textss-lines div {
+    height: 20px;
+    background-color: var(--color-purple-light);
+    border-radius: 6px;
+    margin: 5px 0;
+  }
+  .textss-lines .line-short {
+    width: 50%;
+  }
+  .textss-lines .line-medium {
+    width: 80%;
+  }
+
+/* Wrapper general */
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1500px; /* carrusel más ancho */
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Carrusel movible */
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Cada slide ocupa el 100% del wrapper */
+.slide {
+  display: flex;
+  flex: 0 0 100%;
+  align-items: stretch;
+}
+
+/* Panel derecho que contiene las dos tarjetas */
+.slide-right-panel {
+  display: flex;
+  gap: 0;
+  width: 70%; /* Ocupa el 70% del slide */
+}
+
+/* La tarjeta con la información, ahora ocupa la mitad del panel derecho */
+.slide-card {
+  width: 1000px;
+  
+}
+
+/* El nuevo recuadro que acabas de agregar */
+.extra-info {
+  background-color: var(--color-purple-light);
+  width: 50%;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Lado izquierdo: Imagen */
+.slide-image {
+  position: relative;
+  width: 60%;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+}
+
+/* Círculos sobre la foto */
+.red-circle {
+  width: 22px;
+  height: 22px;
+  background-color: var(--color-pink);
+  border-radius: 50%;
+  position: absolute;
+  top: 18px;
+}
+.red-circle.left {
+  left: 16px;
+}
+.red-circle.right {
+  right: 16px;
+}
+
+/* Lado derecho: Card */
+.slide-card {
+  background-color: var(--color-purple-dark);
+  color: white;
+  border-radius: 14px;
+  padding: 20px;
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+.card-title {
+  background-color: var(--color-purple-light);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.card-text {
+  background-color: var(--color-purple-light);
+  padding:12px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #f7f7f7;
+  margin-bottom: 10px;
+  
+}
+
+/* Líneas decorativas */
+.card-lines .line {
+  height: 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+.card-lines .line.red {
+  background-color: var(--color-pink);
+}
+.card-lines .line.lighter-red {
+  background-color: #f79f9a;
+}
+.card-lines .line.blue {
+  background-color: #75c1e3;
+}
+
+/* Botones circulares */
+.card-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.circle-button {
+  width: 18px;
+  height: 18px;
+  background-color: var(--color-pink);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.circle-button:hover {
+  transform: scale(1.2);
+}
+
+/* Contenedor de todas las líneas */
+.card-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* espacio entre cada fila */
+  margin-top: 10px;
+}
+
+/* Cada fila: círculo + línea */
+.line-item {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espacio entre círculo y línea */
+}
+
+/* Círculo */
+.line-item .red-circle {
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-pink);
+  border-radius: 50%;
+  flex-shrink: 0; /* evita que el círculo se deforme */
+}
+
+/* Línea */
+.line-item .line {
+  flex: 1; /* ocupa todo el espacio restante */
+  height: 8px;
+  border-radius: 6px;
+}
+
+.line.red {
+  background-color: var(--color-pink);
+}
+.line.lighter-red {
+  background-color: #f79f9a;
+}
+.line.blue {
+  background-color: #75c1e3;
+}
+
+  /* Última sección */
+  .last-section {
+    background-color: var(--color-purple-light);
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin-bottom: 80px;
+  }
+  .last-section .nav-chips {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+  .last-section .nav-chip {
+    background-color: var(--color-purple-dark);
+    height: 30px;
+    width: 50px;
+    border-radius: 8px;
+  }
+  .last-section .cta-box {
+    background-color: var(--color-pink);
+    border-radius: 12px;
+    color: white;
+    font-weight: 800;
+    padding: 15px 30px;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .last-section .category-toggle {
+    background-color: white;
+    width: 120px;
+    height: 40px;
+    border-radius: 12px;
+    margin: 0 auto 25px;
+    position: relative;
+  }
+  .last-section .category-toggle .circle {
+    width: 28px;
+    height: 28px;
+    background-color: var(--color-pink);
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+  }
+
+  /* Footer nav chips */
+  footer {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  footer .nav-chips {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+  }
+  footer .nav-chip {
+    background-color: var(--color-purple-dark);
+    width: 55px;
+    height: 20px;
+    border-radius: 8px;
+  }
+  footer .nav-chip.wide {
+    width: 120px;
+  }
+  footer .nav-dot {
+    width: 14px;
+    height: 14px;
+    background-color: var(--color-purple-dark);
+    border-radius: 50%;
+    margin-left: 12px;
+  }

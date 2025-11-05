@@ -1,0 +1,484 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Página Prototipo</title>
+<link rel="stylesheet" href="{% static 'css/styles_index.css' %}" />
+
+</head>
+<body>
+
+<header>
+  <button>Nosotros</button>
+  <button>Portafolios</button>
+  <button>Anuncios</button>
+  <button>Iniciar Sesión</button>
+</header>
+
+<div class="container">
+
+  <section class="hero">
+    <img alt="Paisaje" src="{% static 'img/nube.png' %}"/>
+    <div class="hero-content">
+      <div class="title">Ponle Diseño</div>
+      <div class="subtitle">Y haz crecer tu negocio</div>
+      <div class="line short"></div>
+      <div class="line medium"></div>
+      <div class="toggle-purple"><div class="circle"></div></div>
+      <div class="buttons">
+        <div class="button-sm"></div>
+        <div class="button-sm"></div>
+        <div class="button-sm" style="width: 110px"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="long-toggle">
+    <div class="circle"></div>
+  </div>
+
+  <section class="categories-section">
+    <div class="section-header">
+      <button class="section-title">categorías</button>
+      <button class="btn-empty"></button>
+    </div>
+    <div class="carousel-container" id="categories-carousel">
+      <div class="carousel-item card dark-purple">
+        <div class="text-content">
+          <h4>Título 1</h4>
+          <p>Subtítulo</p>
+          <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+        </div>
+        <div class="image-placeholder">
+          <img src="{% static 'img/nube.png' %}" alt="">
+        </div>
+      </div>
+      <div class="carousel-item card purple">
+        <div class="text-content">
+          <h4>Título 2</h4>
+          <p>Subtítulo</p>
+          <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+        </div>
+        <div class="image-placeholder">
+          <img src="{% static 'img/nube.png' %}" alt="">
+        </div>
+      </div>
+      <div class="carousel-item card coral">
+        <div class="text-content">
+          <h4>Título 3</h4>
+          <p>Subtítulo</p>
+          <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+        </div>
+        <div class="image-placeholder">
+          <img src="{% static 'img/nube.png' %}" alt="">
+        </div>
+      </div>
+    </div>
+    <button class="carousel-arrow next" data-carousel="categories-carousel">›</button>
+  </section>
+
+  <section class="market-section">
+    <div class="market-text">
+      <div class="market-title">valor en el mercado</div>
+      <div class="market-lines">
+        <div class="line medium"></div>
+        <div class="line medium line-short"></div>
+        <div class="line medium"></div>
+      </div>
+      <div class="market-toggle">
+        <div class="circle"></div>
+      </div>
+    </div>
+    <div class="market-image">
+      <img src="{% static 'img/nube.png' %}" alt="">
+    </div>
+  </section>
+
+  <section class="needs-section">
+    <div class="needs-header">Lo que tu negocio necesita</div>
+    <div class="needs-lines needs-line1"></div>
+    <div class="needs-lines needs-line2"></div>
+    <div class="needs-cards">
+      <div class="needs-card navy">
+        <img  src="{% static 'img/nube.png' %}" alt="Perfil" />
+        <div class="needs-line-title"></div>
+        <div class="needs-line-text"></div>
+        <p>
+          Diseño de marca, web.
+        </p>
+        <div class="needs-toggle">
+          <div class="purple-circle"></div>
+        </div>
+      </div>
+      <div class="needs-card purple">
+        <img src="{% static 'img/nube.png' %}" alt="Perfil" />
+        <div class="needs-line-title"></div>
+        <div class="needs-line-text"></div>
+        <p>
+          Diseño de marca, web.
+        </p>
+        <div class="needs-toggle">
+          <div class="purple-circle"></div>
+        </div>
+      </div>
+      <div class="needs-card pink">
+        <img src="{% static 'img/nube.png' %}" alt="Perfil" />
+        <div class="needs-line-title"></div>
+        <div class="needs-line-text"></div>
+        <p>
+          Diseño de marca, web.
+        </p>
+        <div class="needs-toggle">
+          <div class="purple-circle"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portafolios-header">
+    <div class="title-box">portafolios</div>
+    <div class="categories-filter">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div class="long-filter"></div>
+    </div>
+  </section>
+
+  <section class="portafolios-grid">
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="{% static 'img/nube.png' %}" alt="">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-avatar">
+          <img src="{% static 'img/nube.png' %}" alt="">
+        </div>
+        <div class="portfolio-texts">
+          <h4>Proyecto 1</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="portfolio-dots">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="{% static 'img/nube.png' %}" alt="">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-avatar">
+          <img src="{% static 'img/nube.png' %}" alt="">
+        </div>
+        <div class="portfolio-texts">
+          <h4>Proyecto 1</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="portfolio-dots">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="{% static 'img/nube.png' %}" alt="">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-avatar">
+          <img src="{% static 'img/nube.png' %}" alt="">
+        </div>
+        <div class="portfolio-texts">
+          <h4>Proyecto 1</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="portfolio-dots">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="{% static 'img/nube.png' %}" alt="">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-avatar">
+          <img src="{% static 'img/nube.png' %}" alt="">
+        </div>
+        <div class="portfolio-texts">
+          <h4>Proyecto 1</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="portfolio-dots">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="{% static 'img/nube.png' %}" alt="">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-avatar">
+          <img src="{% static 'img/nube.png' %}" alt="">
+        </div>
+        <div class="portfolio-texts">
+          <h4>Proyecto 1</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="portfolio-dots">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-card">
+      <div class="portfolio-image">
+        <img src="{% static 'img/nube.png' %}" alt="">
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-avatar">
+          <img src="{% static 'img/nube.png' %}" alt="">
+        </div>
+        <div class="portfolio-texts">
+          <h4>Proyecto 1</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="portfolio-dots">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portafolios-header"> 
+  <div class="title-box">Antes y Después</div>
+</section>
+
+<section class="antes-despues">
+  <div class="carousel-wrapper">
+    <div class="carousel-track">
+      <!-- Slide 1 -->
+        <div class="slide">
+          <div class="slide-image">
+            <img src="{% static 'img/nube.png' %}" alt="Antes y Después 1">
+            <div class="red-circle left"></div>
+            <div class="red-circle right"></div>
+          </div>
+          <div class="slide-right-panel">
+            <div class="slide-card">
+              <h3 class="card-title">Proyecto Diseño Web</h3>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <div class="textss-lines">
+                <div class="line medium"></div>
+                <div class="line medium line-short"></div>
+              </div>
+              <div class="card-lines">
+                <div class="line-item">
+                  <div class="red-circle"></div>
+                  <div class="line red"></div>
+                </div>
+                <div class="line-item">
+                    <div class="red-circle"></div>
+                    <div class="line lighter-red"></div>
+                </div>
+                <div class="line-item">
+                  <div class="red-circle"></div>
+                    <div class="line blue"></div>
+                </div>
+              </div>
+              <div class="card-buttons">
+                <div class="circle-button"></div>
+                <div class="circle-button"></div>
+              </div>
+            </div>
+            <div class="extra-info">
+              <div class="line-item">
+                <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+                <div class="red-circle"></div>
+                <div class="line red"></div>
+              </div>
+              <div class="line-item">
+                <div class="red-circle"></div>
+                <div class="line lighter-red"></div>
+              </div>
+              <div class="line-item">
+                <div class="red-circle"></div>
+                <div class="line blue"></div>
+              </div>
+                <div class="card-buttons" style="margin-top: 20px;">
+                  <div class="circle-button"></div>
+                  <div class="circle-button"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-image">
+            <img src="{% static 'img/nube.png' %}" alt="Antes y Después 1">
+            <div class="red-circle left"></div>
+            <div class="red-circle right"></div>
+          </div>
+          <div class="slide-right-panel">
+            <div class="slide-card">
+              <h3 class="card-title">Proyecto Diseño Web</h3>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <div class="textss-lines">
+                <div class="line medium"></div>
+                <div class="line medium line-short"></div>
+              </div>
+              <div class="card-lines">
+                <div class="line-item">
+                  <div class="red-circle"></div>
+                  <div class="line red"></div>
+                </div>
+                <div class="line-item">
+                    <div class="red-circle"></div>
+                    <div class="line lighter-red"></div>
+                </div>
+                <div class="line-item">
+                  <div class="red-circle"></div>
+                    <div class="line blue"></div>
+                </div>
+              </div>
+              <div class="card-buttons">
+                <div class="circle-button"></div>
+                <div class="circle-button"></div>
+              </div>
+            </div>
+            <div class="extra-info">
+              <div class="line-item">
+                <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+                <div class="red-circle"></div>
+                <div class="line red"></div>
+              </div>
+              <div class="line-item">
+                <div class="red-circle"></div>
+                <div class="line lighter-red"></div>
+              </div>
+              <div class="line-item">
+                <div class="red-circle"></div>
+                <div class="line blue"></div>
+              </div>
+                <div class="card-buttons" style="margin-top: 20px;">
+                  <div class="circle-button"></div>
+                  <div class="circle-button"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-image">
+            <img src="{% static 'img/nube.png' %}" alt="Antes y Después 1">
+            <div class="red-circle left"></div>
+            <div class="red-circle right"></div>
+          </div>
+          <div class="slide-right-panel">
+            <div class="slide-card">
+              <h3 class="card-title">Proyecto Diseño Web</h3>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <div class="textss-lines">
+                <div class="line medium"></div>
+                <div class="line medium line-short"></div>
+              </div>
+              <div class="card-lines">
+                <div class="line-item">
+                  <div class="red-circle"></div>
+                  <div class="line red"></div>
+                </div>
+                <div class="line-item">
+                    <div class="red-circle"></div>
+                    <div class="line lighter-red"></div>
+                </div>
+                <div class="line-item">
+                  <div class="red-circle"></div>
+                    <div class="line blue"></div>
+                </div>
+              </div>
+              <div class="card-buttons">
+                <div class="circle-button"></div>
+                <div class="circle-button"></div>
+              </div>
+            </div>
+            <div class="extra-info">
+              <div class="line-item">
+                <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+                <div class="red-circle"></div>
+                <div class="line red"></div>
+              </div>
+              <div class="line-item">
+                <div class="red-circle"></div>
+                <div class="line lighter-red"></div>
+              </div>
+              <div class="line-item">
+                <div class="red-circle"></div>
+                <div class="line blue"></div>
+              </div>
+                <div class="card-buttons" style="margin-top: 20px;">
+                  <div class="circle-button"></div>
+                  <div class="circle-button"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="center-bottom-dots"></div>
+  </div>
+
+  <div class="arrow-right" style="align-self: center;">&gt;</div>
+</section>
+
+</div>
+
+<section class="last-section">
+  <div class="nav-chips">
+    <div class="nav-chip"></div>
+    <div class="nav-chip"></div>
+    <div class="nav-chip"></div>
+  </div>
+  <div class="cta-box">
+    ¿Tu negocio necesita ayuda? <br /><strong>¡Ponle Diseño!</strong>
+  </div>
+  <div class="category-toggle">
+    <div class="circle"></div>
+  </div>
+  <div class="nav-chips" style="margin-top: 40px; gap: 30px;">
+    <div class="nav-chip"></div>
+    <div class="nav-chip"></div>
+    <div class="nav-chip"></div>
+    <div class="nav-chip"></div>
+    <div class="nav-chip"></div>
+    <div class="nav-chip"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="nav-chips">
+    <div class="nav-chip"></div>
+    <div class="nav-chip"></div>
+    <div class="nav-chip"></div>
+    <div class="nav-chip"></div>
+    <div class="nav-chip wide"></div>
+    <div class="nav-dot"></div>
+    <div class="nav-dot"></div>
+    <div class="nav-dot"></div>
+  </div>
+</footer>
+
+<script src="{% static 'js/script_index.js' %}"></script>
+</body>
+</html>
