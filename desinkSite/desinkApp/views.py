@@ -10,7 +10,7 @@ firebaseConfig = {
     "messagingSenderId": "566825435290",
     "appId": "1:566825435290:web:a8f042d4d1b36c81331f23",
     "measurementId": "G-PYYYRX57L5",
-    "databaseURL": ""  # si usas Realtime Database, agrega la URL aquí
+    "databaseURL": "https://proyecto-titulo-bcf7e-default-rtdb.firebaseio.com/"
 }
 
 # Inicializar Firebase
