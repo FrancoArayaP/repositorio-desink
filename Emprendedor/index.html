@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generated Page</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODISEÑO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Montserrat:wght@500;600&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400&family=Roboto+Mono:wght@400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="global.css">
+  <style id="sections-styles">
+/* CSS for section section:Header */
+#header-section .hero-wrapper {
+        position: relative;
+        padding-top: 143px;
+        padding-bottom: 100px;
+        text-align: center;
+        color: var(--c-white);
+    }
+    #header-section .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--c-primary-gradient);
+        z-index: -1;
+    }
+    #header-section .main-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(247, 243, 255, 0.9);
+        padding: 16px 0;
+        z-index: 10;
+    }
+    #header-section .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #header-section .logo {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 32px;
+        color: var(--c-text-dark);
+    }
+    #header-section .main-nav ul {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 10px;
+    }
+    #header-section .main-nav li a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 20px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        color: var(--c-text-dark);
+    }
+    #header-section .auth-buttons {
+        display: flex;
+        gap: 8px;
+    }
+    #header-section .btn {
+        padding: 16px 32px;
+        border-radius: 6px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1;
+    }
+    #header-section .btn-primary {
+        background-color: var(--c-purple-dark);
+        color: var(--c-text-light);
+    }
+    #header-section .btn-secondary {
+        border: 1px solid var(--c-text-dark);
+        color: var(--c-text-dark);
+    }
+    #header-section .hero-content {
+        padding-top: 104px; /* Header height */
+    }
+    #header-section .hero-title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 1.2;
+        margin-bottom: 74px;
+    }
+    #header-section .hero-cta {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 30px;
+        color: var(--c-white);
+    }
+    #header-section .brief-section {
+        padding: 83px 0;
+    }
+    #header-section .brief-section .section-title {
+        margin-bottom: 47px;
+    }
+    #header-section .tags-container {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+    #header-section .tag-item {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 15px 24px;
+        border: 2px solid var(--c-text-dark);
+        border-radius: 15px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        color: var(--c-text-dark);
+    }
+    @media (max-width: 1200px) {
+        #header-section .main-nav { display: none; } /* Simple responsive solution */
+    }
+    @media (max-width: 768px) {
+        #header-section .hero-title, #header-section .hero-cta { font-size: 24px; }
+        #header-section .auth-buttons { flex-direction: column; gap: 10px; }
+        #header-section .tags-container { flex-direction: column; align-items: center; }
+    }
+
+/* CSS for section section:HowItWorks */
+#how-it-works {
+        background-color: var(--c-purple-base);
+        padding: 70px 0;
+        position: relative;
+        min-height: 621px;
+        overflow: hidden;
+    }
+    #how-it-works .container {
+        position: relative;
+        height: 496px;
+    }
+    #how-it-works .path-background {
+        position: absolute;
+        top: 62px;
+        left: -230px;
+        width: 1783px;
+        height: 301px;
+        border: 7px solid #eae8f0;
+        border-radius: 200px;
+        opacity: 0.98;
+    }
+    #how-it-works .step {
+        position: absolute;
+        text-align: center;
+        color: var(--c-white);
+    }
+    #how-it-works .step-icon-wrapper {
+        margin: 0 auto 24px;
+        width: 123px;
+        height: 123px;
+    }
+    #how-it-works .step-icon {
+        width: 100%;
+        height: 100%;
+    }
+    #how-it-works .step-title {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        opacity: 0.95;
+        margin-bottom: 7px;
+    }
+    #how-it-works .step-desc {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        opacity: 0.75;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    #how-it-works .step-1 { top: 0; left: 155px; }
+    #how-it-works .step-2 { top: 0; left: 633px; }
+    #how-it-works .step-3 { top: 0; left: 1131px; }
+    #how-it-works .step-4 { top: 292px; left: 391px; }
+    #how-it-works .step-5 { top: 292px; left: 894px; }
+    #how-it-works .center-image {
+        position: absolute;
+        top: 230px;
+        left: 343px;
+        width: 415px;
+        height: 209px;
+    }
+    @media (max-width: 1600px) {
+        #how-it-works .container { transform: scale(0.8); transform-origin: top center; height: 400px; }
+    }
+    @media (max-width: 1200px) {
+        #how-it-works { padding: 50px 0; }
+        #how-it-works .container { display: flex; flex-direction: column; align-items: center; gap: 40px; position: static; height: auto; }
+        #how-it-works .step { position: static; }
+        #how-it-works .path-background, #how-it-works .center-image { display: none; }
+    }
+
+/* CSS for section section:Differentiators */
+#differentiators {
+        padding: 197px 0;
+        text-align: center;
+    }
+    #differentiators .section-title {
+        margin-bottom: 154px;
+    }
+    #differentiators .features-grid {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-bottom: 73px;
+    }
+    #differentiators .feature-card {
+        width: 195px;
+        text-align: center;
+    }
+    #differentiators .feature-card img {
+        border-radius: 10px;
+        margin-bottom: 11px;
+        width: 194px;
+        height: 136px;
+        object-fit: cover;
+    }
+    #differentiators .feature-card p {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.2;
+        color: var(--c-black);
+    }
+    #differentiators .cta-button {
+        display: inline-block;
+        width: 159px;
+        height: 40px;
+        background-color: #8b59f6;
+        border-radius: 200px;
+    }
+    @media (max-width: 992px) {
+        #differentiators { padding: 100px 0; }
+        #differentiators .section-title { margin-bottom: 80px; }
+    }
+
+/* CSS for section section:Testimonials */
+#testimonials {
+        padding: 141px 0;
+        background-color: var(--c-white);
+    }
+    #testimonials .section-title {
+        font-family: 'Inter', sans-serif;
+        font-weight: 800;
+        font-size: 36px;
+        color: #1f2937;
+        margin-bottom: 88px;
+    }
+    #testimonials .testimonials-grid {
+        display: flex;
+        justify-content: center;
+        gap: 37px;
+        flex-wrap: wrap;
+    }
+    #testimonials .testimonial-card {
+        width: 405px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    #testimonials .quote-content {
+        background-color: var(--c-white);
+        padding: 48px;
+        text-align: center;
+    }
+    #testimonials .quote-content p {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: var(--c-gray-text);
+    }
+    #testimonials .quote-icon {
+        margin: 0 auto 16px;
+    }
+    #testimonials .separator {
+        width: 100%;
+    }
+    #testimonials .author-info {
+        text-align: center;
+    }
+    #testimonials .author-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        margin: 0 auto 8px;
+    }
+    #testimonials .author-name {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        color: #1f2937;
+        margin-bottom: 8px;
+    }
+    #testimonials .author-role {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        color: var(--c-gray-text);
+    }
+    #testimonials .testimonial-card.featured .quote-content {
+        background-color: var(--c-blue);
+        color: var(--c-white);
+    }
+    #testimonials .testimonial-card.featured .quote-content p {
+        color: var(--c-white);
+    }
+    #testimonials .testimonial-card.featured .author-name,
+    #testimonials .testimonial-card.featured .author-role {
+        color: #1f2937;
+    }
+
+/* CSS for section section:Investment */
+#investment {
+        padding: 206px 0 149px;
+    }
+    #investment .section-title {
+        margin-bottom: 231px;
+    }
+    #investment .investment-slider {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #e7e4fa;
+        padding: 48px 64px;
+        gap: 137px;
+        margin-bottom: 49px;
+    }
+    #investment .slider-content {
+        max-width: 1067px;
+    }
+    #investment .icon-wrapper {
+        width: 32px;
+        height: 32px;
+        border: 1px solid #f7f3ff;
+        border-radius: 2px;
+        margin-bottom: 16px;
+    }
+    #investment .slider-content h3 {
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 600;
+        font-size: 36px;
+        color: #652d8b;
+        margin-bottom: 8px;
+    }
+    #investment .slider-content p {
+        font-family: 'Work Sans', sans-serif;
+        font-size: 20px;
+        line-height: 1.4;
+        color: #652d8b;
+        margin-bottom: 41px;
+    }
+    #investment .slider-content .btn {
+        padding: 12px 24px;
+        background-color: var(--c-white);
+        border: 1px solid var(--c-blue);
+        color: #5e25eb;
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+    }
+    #investment .slider-image img {
+        width: 352px;
+        height: 216px;
+    }
+    #investment .slider-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+    }
+    #investment .nav-arrow {
+        background: var(--c-blue);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    #investment .nav-dots {
+        display: flex;
+        gap: 16px;
+    }
+    #investment .nav-dots .dot {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        background-color: #dbeafe;
+        border: 1px solid var(--c-blue);
+        color: var(--c-blue);
+    }
+    #investment .nav-dots .dot.active {
+        background-color: #bfdbfe;
+        border-color: var(--c-blue-dark);
+        color: var(--c-blue-dark);
+    }
+    @media (max-width: 1200px) {
+        #investment .investment-slider { flex-direction: column; }
+    }
+    @media (max-width: 768px) {
+        #investment { padding: 100px 0; }
+        #investment .section-title { margin-bottom: 50px; font-size: 28px; }
+    }
+
+/* CSS for section section:PopularServices */
+#popular-services {
+        padding: 265px 0;
+        position: relative;
+    }
+    #popular-services::before {
+        content: '';
+        position: absolute;
+        top: 200px;
+        left: 0;
+        width: 1595px;
+        height: 148px;
+        background-color: #d9d9d9;
+        opacity: 0.49;
+        z-index: -1;
+    }
+    #popular-services .services-title {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 30px;
+        text-align: right;
+        margin-right: 100px;
+        margin-bottom: 165px;
+    }
+    #popular-services .services-carousel {
+        display: flex;
+        gap: 50px;
+        padding: 0 50px;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    #popular-services .services-carousel::-webkit-scrollbar {
+        display: none;
+    }
+    #popular-services .service-card {
+        flex: 0 0 421px;
+        height: 318px;
+        background-color: #b8b8b8;
+        padding: 20px;
+        position: relative;
+    }
+    #popular-services .service-card.placeholder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #popular-services .service-card h3 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 35px;
+        color: var(--c-black);
+        max-width: 323px;
+        margin-bottom: 88px;
+    }
+    #popular-services .service-btn {
+        display: inline-block;
+        width: 159px;
+        height: 40px;
+        background-color: #8b59f6;
+        border-radius: 200px;
+        margin-bottom: 18px;
+    }
+    #popular-services .service-placeholder {
+        width: 292px;
+        height: 40px;
+        background-color: var(--c-white);
+        border-radius: 10px;
+    }
+    @media (max-width: 768px) {
+        #popular-services { padding: 100px 0; }
+        #popular-services .services-title { text-align: center; margin-right: 0; margin-bottom: 50px; }
+    }
+
+/* CSS for section section:CtaProcess */
+#cta-process .cta-banner-1 {
+        padding: 50px 0;
+        background: var(--c-secondary-gradient);
+    }
+    #cta-process .cta-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #cta-process .cta-container h3 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 48px;
+        color: #f2e4ff;
+    }
+    #cta-process .cta-input {
+        position: relative;
+        width: 346px;
+    }
+    #cta-process .cta-input input {
+        width: 100%;
+        background: transparent;
+        border: 2px solid #f2e4ff;
+        border-radius: 200px;
+        padding: 12px 40px 12px 16px;
+        font-family: 'Inter', sans-serif;
+        font-size: 12px;
+        color: #f2e4ff;
+    }
+    #cta-process .cta-input input::placeholder { color: #f2e4ff; }
+    #cta-process .cta-input img { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); }
+    #cta-process .process-section { padding: 191px 0; }
+    #cta-process .process-section .section-title { margin-bottom: 177px; }
+    #cta-process .process-stepper { display: flex; justify-content: center; align-items: flex-start; gap: 16px; }
+    #cta-process .step-item { display: flex; flex-direction: column; align-items: center; gap: 16px; width: 230px; }
+    #cta-process .step-icon-container { width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; border: 1px solid var(--c-blue-dark); }
+    #cta-process .step-line { width: 3px; height: 174px; background-color: #e5e7eb; border-radius: 5px; position: relative; transform: rotate(90deg); margin-top: -70px; margin-bottom: -70px; }
+    #cta-process .step-line::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 100%; background-color: var(--c-blue); border-radius: 6px; }
+    #cta-process .step-line.short::before { height: 70%; }
+    #cta-process .step-line.empty::before { height: 0; }
+    #cta-process .step-text { text-align: left; width: 100%; }
+    #cta-process .step-text .text-1 { font-size: 16px; color: #3b82f6; margin-bottom: 4px; }
+    #cta-process .step-text .text-2 { font-size: 16px; font-weight: 600; color: var(--c-blue); margin-bottom: 12px; }
+    #cta-process .step-text .tag { background-color: #dbeafe; color: var(--c-blue-dark); padding: 4px 8px; border-radius: 20px; font-size: 12px; }
+    @media (max-width: 1400px) { #cta-process .process-stepper { flex-wrap: wrap; } }
+    @media (max-width: 768px) { #cta-process .cta-container { flex-direction: column; gap: 20px; text-align: center; } #cta-process .process-section { padding: 100px 0; } }
+
+/* CSS for section section:Designers */
+#designers {
+        padding: 252px 0;
+    }
+    #designers .designers-header {
+        max-width: 1097px;
+        margin: 0 auto 254px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 30px;
+        color: var(--c-black);
+    }
+    #designers .designers-header h2 {
+        margin-bottom: 74px;
+    }
+    #designers .designers-grid {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        flex-wrap: wrap;
+    }
+    #designers .designer-card {
+        width: 488px;
+    }
+    #designers .card-image-area {
+        height: 400px;
+        background-color: #dbeafe;
+        border: 1px solid var(--c-blue-dark);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-bottom: 32px;
+    }
+    #designers .card-top-bar {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background-color: #bfdbfe;
+        padding: 6px;
+    }
+    #designers .card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #designers .card-footer h4 {
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 600;
+        font-size: 36px;
+        color: var(--c-blue-dark);
+    }
+    #designers .card-footer img {
+        background-color: #dbeafe;
+        padding: 6px;
+    }
+    @media (max-width: 768px) {
+        #designers { padding: 100px 0; }
+        #designers .designers-header { margin-bottom: 50px; font-size: 24px; }
+    }
+
+/* CSS for section section:CtaFaq */
+#cta-faq .cta-banner-2 {
+        padding: 67px 0;
+        background: var(--c-primary-gradient);
+        color: #f2e4ff;
+    }
+    #cta-faq .cta-banner-2 h3 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 48px;
+        text-align: center;
+        margin-bottom: 77px;
+    }
+    #cta-faq .inputs-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px 30px;
+    }
+    #cta-faq .cta-input {
+        width: 346px;
+    }
+    #cta-faq .cta-input input {
+        width: 100%;
+        background: transparent;
+        border: 2px solid #f2e4ff;
+        border-radius: 200px;
+        padding: 12px 16px;
+        font-family: 'Inter', sans-serif;
+        font-size: 12px;
+        color: #f2e4ff;
+    }
+    #cta-faq .cta-input input::placeholder { color: #f2e4ff; }
+    #cta-faq .faq-section { padding: 155px 0; }
+    #cta-faq .faq-header { text-align: center; margin-bottom: 56px; }
+    #cta-faq .faq-header p { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--c-blue-dark); margin-bottom: 16px; }
+    #cta-faq .faq-header h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 24px; color: var(--c-blue-dark); }
+    #cta-faq .faq-list { max-width: 844px; margin: 0 auto; }
+    #cta-faq .faq-item { display: flex; justify-content: space-between; align-items: center; padding: 32px 0; }
+    #cta-faq .faq-item p { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; color: var(--c-blue-dark); }
+    #cta-faq .faq-list hr { border: none; height: 1px; background-color: #bfdbfe; margin: 0; }
+    @media (max-width: 768px) { #cta-faq .faq-section { padding: 100px 0; } }
+
+/* CSS for section section:Footer */
+#main-footer {
+        background-color: var(--c-white);
+    }
+    #main-footer .strategic-banner-section {
+        padding: 272px 0;
+    }
+    #main-footer .strategic-banner-section p {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 1.2;
+        max-width: 1097px;
+    }
+    #main-footer .discover-section {
+        height: 496px;
+    }
+    #main-footer .discover-bg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    #main-footer .footer-bottom {
+        padding: 144px 0;
+    }
+    #main-footer .footer-bottom-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #main-footer .footer-logo {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 28px;
+    }
+    #main-footer .footer-nav {
+        display: flex;
+        gap: 82px;
+    }
+    #main-footer .footer-nav a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        color: var(--c-blue);
+    }
+    @media (max-width: 768px) {
+        #main-footer .strategic-banner-section { padding: 100px 0; }
+        #main-footer .footer-bottom-container { flex-direction: column; gap: 40px; }
+        #main-footer .footer-nav { flex-direction: column; gap: 20px; text-align: center; }
+    }
+  </style>
+  <script src="global.js" defer></script>
+</head>
+<body>
+<section id="header-section">
+    <div class="hero-wrapper">
+        <div class="hero-background"></div>
+        <header class="main-header">
+            <div class="container header-container">
+                <a href="#" class="logo">CODISEÑO</a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#">Nuestro propósito</a></li>
+                        <li><a href="#">Para mi negocio</a></li>
+                        <li><a href="#">Diseñadores <img src="images/0_247.svg" alt="dropdown icon"></a></li>
+                        <li><a href="#">Casos reales</a></li>
+                        <li><a href="#">Buscar trabajo</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="#" class="btn btn-secondary">Iniciar sesión</a>
+                    <a href="#" class="btn btn-primary">Registrarse</a>
+                </div>
+            </div>
+        </header>
+        <div class="container hero-content">
+            <h1 class="hero-title">Tu Negocio merece Diseño Profesional<br>crecimiento, confianza, clientes</h1>
+            <a href="#" class="hero-cta">Comenzar mi Brief Inteligente</a>
+        </div>
+    </div>
+    <div class="brief-section">
+        <div class="container">
+            <h2 class="section-title">Pasos para Iniciar con el Brief"</h2>
+            <div class="tags-container">
+                <div class="tag-item"><span>Logo profesional</span><img src="images/0_419.svg" alt=""></div>
+                <div class="tag-item"><span>Quiero mejorar mis redes</span><img src="images/0_424.svg" alt=""></div>
+                <div class="tag-item"><span>Diseño de producto</span><img src="images/0_429.svg" alt=""></div>
+                <div class="tag-item"><span>Diseño de producto</span><img src="images/0_434.svg" alt=""></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="how-it-works">
+    <div class="container">
+        <!-- The dashed line path is a complex visual element, represented here as a background placeholder -->
+        <div class="path-background"></div>
+        <div class="step step-1">
+            <div class="step-icon-wrapper"><img src="images/0_263.svg" alt="" class="step-icon"></div>
+            <p class="step-title">Cuéntanos de tu negocio</p>
+            <p class="step-desc">Cuéntanos tu idea, visión o desafío</p>
+        </div>
+        <div class="step step-2">
+            <div class="step-icon-wrapper"><img src="images/0_269.svg" alt="" class="step-icon"></div>
+            <p class="step-title">Elige el servicio que necesitas</p>
+            <p class="step-desc">Cuéntanos tu idea, visión o desafío</p>
+        </div>
+        <div class="step step-3">
+            <div class="step-icon-wrapper"><img src="images/0_281.svg" alt="" class="step-icon"></div>
+            <p class="step-title">Describe tu estilo ideal</p>
+            <p class="step-desc">Cuéntanos tu idea, visión o desafío</p>
+        </div>
+        <div class="step step-4">
+            <div class="step-icon-wrapper"><img src="images/0_275.svg" alt="" class="step-icon"></div>
+            <p class="step-title">Elige al diseñador perfecto para t</p>
+            <p class="step-desc">Cuéntanos tu idea, visión o desafío</p>
+        </div>
+        <div class="step step-5">
+            <div class="step-icon-wrapper"><img src="images/0_287.svg" alt="" class="step-icon"></div>
+            <p class="step-title">Define el tiempo y presupuesto</p>
+            <p class="step-desc">Cuéntanos tu idea, visión o desafío</p>
+        </div>
+        <div class="center-image">
+            <img src="images/f0b0b2b6fd51b444701afa6b770456117ce3db85.png" alt="Designer working on a laptop">
+        </div>
+    </div>
+</section>
+<section id="differentiators">
+    <div class="container">
+        <h2 class="section-title">¿Qué nos hace diferentes?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="images/30c7570ddb941730283111b0a7f454d0bf7a8111.png" alt="Feature illustration">
+                <p>Precios claros desde el principio</p>
+            </div>
+            <div class="feature-card">
+                <img src="images/284b1385833bacca0c285215946d7e482e5d6031.png" alt="Feature illustration">
+                <p>Precios claros desde el principio</p>
+            </div>
+            <div class="feature-card">
+                <img src="images/94adce75155bbe101f64eb890b8ff530bcdec5b5.png" alt="Feature illustration">
+                <p>Precios claros desde el principio</p>
+            </div>
+            <div class="feature-card">
+                <img src="images/6b2f8dc4597a3538b52805e7012de72410a6678f.png" alt="Feature illustration">
+                <p>Precios claros desde el principio</p>
+            </div>
+             <div class="feature-card">
+                <img src="images/b8e6a87d88440ec5a75be32fd0e33550bd12b357.png" alt="Feature illustration">
+                <p>Precios claros desde el principio</p>
+            </div>
+        </div>
+        <a href="#" class="cta-button">Button</a>
+    </div>
+</section>
+<section id="testimonials">
+    <div class="container">
+        <h2 class="section-title">What our client says</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="quote-content">
+                    <img src="images/0_303.svg" alt="quote" class="quote-icon">
+                    <p>When our designs need an expert opinion or approval, I know I can rely on your agency Thank you for all your help-I will be recommending you to everyone</p>
+                </div>
+                <img src="images/0_307.svg" alt="separator" class="separator">
+                <div class="author-info">
+                    <img src="images/09505781bfcf1a90d415afabb06c749b29b9f129.png" alt="Kera Joo" class="author-avatar">
+                    <p class="author-name">Kera Joo</p>
+                    <p class="author-role">Support</p>
+                </div>
+            </div>
+            <div class="testimonial-card featured">
+                <div class="quote-content">
+                    <img src="images/0_317.svg" alt="quote" class="quote-icon">
+                    <p>When our designs need an expert opinion or approval, I know I can rely on your agency Thank you for all your help-I will be recommending you to everyone</p>
+                </div>
+                <img src="images/0_321.svg" alt="separator" class="separator">
+                <div class="author-info">
+                    <img src="images/e0a70c4da0d67981552949596dae97afd4a891d4.png" alt="Alen Max" class="author-avatar">
+                    <p class="author-name">Alen Max</p>
+                    <p class="author-role">Designer</p>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote-content">
+                    <img src="images/0_331.svg" alt="quote" class="quote-icon">
+                    <p>When our designs need an expert opinion or approval, I know I can rely on your agency Thank you for all your help-I will be recommending you to everyone</p>
+                </div>
+                <img src="images/0_335.svg" alt="separator" class="separator">
+                <div class="author-info">
+                    <img src="images/881614494abf379e1fb6b8256a6782d61fd4d15d.png" alt="Tom Koch" class="author-avatar">
+                    <p class="author-name">Tom Koch</p>
+                    <p class="author-role">Developer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="investment">
+    <div class="container">
+        <h2 class="section-title">Razones por las que el diseño es tu mejor inversión</h2>
+        <div class="investment-slider">
+            <div class="slider-content">
+                <div class="icon-wrapper"><img src="images/0_140.svg" alt="Checkmark icon"></div>
+                <h3>Heading</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="#" class="btn">Button Text</a>
+            </div>
+            <div class="slider-image">
+                <img src="images/0_147.svg" alt="Placeholder image">
+            </div>
+        </div>
+        <div class="slider-nav">
+            <button class="nav-arrow"><img src="images/0_118.svg" alt="Previous"></button>
+            <div class="nav-dots">
+                <span class="dot">1</span>
+                <span class="dot active">2</span>
+                <span class="dot">3</span>
+                <span class="dot">4</span>
+            </div>
+            <button class="nav-arrow"><img src="images/0_131.svg" alt="Next"></button>
+        </div>
+    </div>
+</section>
+<section id="popular-services">
+    <div class="container">
+        <h2 class="services-title">Servicios Populares y Soluciones"</h2>
+        <div class="services-carousel">
+            <div class="service-card">
+                <h3>Lo que tu negocio necesita</h3>
+                <a href="#" class="service-btn">Button</a>
+                <div class="service-placeholder"></div>
+            </div>
+            <div class="service-card placeholder"></div>
+            <div class="service-card placeholder"></div>
+            <div class="service-card placeholder">
+                <img src="images/0_20.svg" alt="more options">
+            </div>
+        </div>
+    </div>
+</section>
+<section id="cta-process">
+    <div class="cta-banner-1">
+        <div class="container cta-container">
+            <h3>Tu Negocio, Bien Diseñado</h3>
+            <div class="cta-input">
+                <input type="text" placeholder="placeholder text">
+                <img src="images/0_350.svg" alt="icon">
+            </div>
+        </div>
+    </div>
+    <div class="process-section">
+        <div class="container">
+            <h2 class="section-title">El Proceso Detrás del Servicio</h2>
+            <div class="process-stepper">
+                <div class="step-item">
+                    <div class="step-icon-container"><img src="images/0_41.svg" alt="checkmark"></div>
+                    <div class="step-line"></div>
+                    <div class="step-text">
+                        <p class="text-1">text</p>
+                        <p class="text-2">Heading</p>
+                        <span class="tag">text</span>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon-container"><img src="images/0_54.svg" alt="checkmark"></div>
+                    <div class="step-line"></div>
+                    <div class="step-text">
+                        <p class="text-1">text</p>
+                        <p class="text-2">Heading</p>
+                        <span class="tag">text</span>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon-container"><img src="images/0_67.svg" alt="icon"></div>
+                    <div class="step-line short"></div>
+                    <div class="step-text">
+                        <p class="text-1">text</p>
+                        <p class="text-2">Heading</p>
+                        <span class="tag">text</span>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon-container"><img src="images/0_80.svg" alt="icon"></div>
+                    <div class="step-line empty"></div>
+                    <div class="step-text">
+                        <p class="text-1">text</p>
+                        <p class="text-2">Heading</p>
+                        <span class="tag">text</span>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon-container"><img src="images/0_93.svg" alt="icon"></div>
+                    <div class="step-line empty"></div>
+                    <div class="step-text">
+                        <p class="text-1">text</p>
+                        <p class="text-2">Heading</p>
+                        <span class="tag">text</span>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon-container"><img src="images/0_106.svg" alt="icon"></div>
+                    <div class="step-text">
+                        <p class="text-1">text</p>
+                        <p class="text-2">Heading</p>
+                        <span class="tag">text</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="designers">
+    <div class="container">
+        <div class="designers-header">
+            <h2>Destacado de Perfiles de Diseñadores</h2>
+            <p>Un pequeño grid de diseñadores verificados para aumentar la confianza en la plataforma.</p>
+        </div>
+        <div class="designers-grid">
+            <div class="designer-card">
+                <div class="card-image-area">
+                    <img src="images/0_197.svg" alt="icon" class="main-icon">
+                    <div class="card-top-bar"><img src="images/0_194.svg" alt="close icon"></div>
+                </div>
+                <div class="card-footer">
+                    <h4>Heading</h4>
+                    <img src="images/0_201.svg" alt="arrow icon">
+                </div>
+            </div>
+            <div class="designer-card">
+                <div class="card-image-area">
+                    <img src="images/0_211.svg" alt="icon" class="main-icon">
+                    <div class="card-top-bar"><img src="images/0_208.svg" alt="close icon"></div>
+                </div>
+                <div class="card-footer">
+                    <h4>Heading</h4>
+                    <img src="images/0_215.svg" alt="arrow icon">
+                </div>
+            </div>
+            <div class="designer-card">
+                <div class="card-image-area">
+                    <img src="images/0_225.svg" alt="icon" class="main-icon">
+                    <div class="card-top-bar"><img src="images/0_222.svg" alt="close icon"></div>
+                </div>
+                <div class="card-footer">
+                    <h4>Heading</h4>
+                    <img src="images/0_229.svg" alt="arrow icon">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="cta-faq">
+    <div class="cta-banner-2">
+        <div class="container">
+            <h3>Tu Negocio, Bien Diseñado</h3>
+            <div class="inputs-grid">
+                <div class="cta-input"><input type="text" placeholder="placeholder text"></div>
+                <div class="cta-input"><input type="text" placeholder="placeholder text"></div>
+                <div class="cta-input"><input type="text" placeholder="placeholder text"></div>
+                <div class="cta-input"><input type="text" placeholder="placeholder text"></div>
+                <div class="cta-input"><input type="text" placeholder="placeholder text"></div>
+                <div class="cta-input"><input type="text" placeholder="placeholder text"></div>
+                <div class="cta-input"><input type="text" placeholder="placeholder text"></div>
+            </div>
+        </div>
+    </div>
+    <div class="faq-section">
+        <div class="container">
+            <div class="faq-header">
+                <p>Title</p>
+                <h3>Heading</h3>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <p>What does lorem ipsum actually mean?</p>
+                    <img src="images/0_360.svg" alt="toggle icon">
+                </div>
+                <hr>
+                <div class="faq-item">
+                    <p>How do we know what kind of sounds dinosaurs made?</p>
+                    <img src="images/0_367.svg" alt="toggle icon">
+                </div>
+                <hr>
+                <div class="faq-item">
+                    <p>Why work from home is not as fun as we thought it would be?</p>
+                    <img src="images/0_374.svg" alt="toggle icon">
+                </div>
+                <hr>
+                <div class="faq-item">
+                    <p>In what way did human beings started using words?</p>
+                    <img src="images/0_381.svg" alt="toggle icon">
+                </div>
+                <hr>
+                <div class="faq-item">
+                    <p>Which is the least developed area in the world</p>
+                    <img src="images/0_388.svg" alt="toggle icon">
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</section>
+<footer id="main-footer">
+    <div class="strategic-banner-section">
+        <div class="container">
+            <p>Banners estratégicos que llamen a la acción: "Calcula tu presupuesto", "Empieza tu match ahora".</p>
+        </div>
+    </div>
+    <div class="discover-section">
+        <img src="images/45bc6f6f44ce648fad4dae1033af6cc69e81f4e6.png" alt="Abstract background image" class="discover-bg">
+    </div>
+    <div class="footer-bottom">
+        <div class="container footer-bottom-container">
+            <div class="footer-logo">Logotipo</div>
+            <nav class="footer-nav">
+                <a href="#"><span>text</span></a>
+                <a href="#"><span>text</span></a>
+                <a href="#"><span>text</span></a>
+                <a href="#"><span>text</span></a>
+            </nav>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
