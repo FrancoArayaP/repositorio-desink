@@ -21,4 +21,5 @@ from desinkApp import views as desinkAppViews
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', desinkAppViews.index, name='index'),
+    path('', desinkAppViews.landing, name='landing'),
 ]

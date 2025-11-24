@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CODiseño</title>
+  <link rel="stylesheet" href="{% static 'css/landing.css' %}" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">CODISEÑO</div>
+
+    <nav class="nav-links">
+      <a href="#">Nuestro propósito</a>
+      <a href="#">Para mi negocio</a>
+      <a href="#">Diseñadores</a>
+      <a href="#">Casos reales</a>
+      <a href="#">Buscar trabajo</a>
+    </nav>
+
+    <div class="auth-buttons">
+      <button class="btn-outline">Iniciar sesión</button>
+      <button class="btn-primary">Registrarse</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Diseño Profesional<br>para Mipymes Chilenas</h1>
+      <h2>Conecta, colabora y crece</h2>
+      <p class="sub">
+        La plataforma que une el talento profesional con tu negocio
+      </p>
+
+      <!-- Search bar -->
+      <div class="search-bar">
+        <input type="text" placeholder="¿Qué necesitas diseñar?" />
+        <div class="search-btn"></div>
+      </div>
+
+      <!-- Quick buttons -->
+      <div class="quick-buttons">
+        <button class="quick-btn">Logo profesional</button>
+        <button class="quick-btn">Quiero mejorar mis redes</button>
+        <button class="quick-btn">Diseño de producto</button>
+      </div>
+    </div>
+
+    <!-- Side buttons -->
+    <button class="side-btn left">Soy mipyme</button>
+    <button class="side-btn right">Soy diseñador</button>
+  </section>
+
+  <section class="services">
+    <div class="services-header">
+      <h2>Servicios que tu negocio necesita</h2>
+      <button class="see-more">
+        Ver más <span>➜</span>
+      </button>
+    </div>
+
+    <div class="services-list">
+      <div class="service-card">
+        <img src="{%  static 'img/placeholder.png' %}" alt="Servicio">
+        <p>Logo y identidad</p>
+      </div>
+
+      <div class="service-card">
+        <img src="{%  static 'img/placeholder.png' %}" alt="Servicio">
+        <p>Diseño Web</p>
+      </div>
+
+      <div class="service-card">
+        <img src="{%  static 'img/placeholder.png' %}" alt="Servicio">
+        <p>Logo y identidad</p>
+      </div>
+
+      <div class="service-card">
+        <img src="{%  static 'img/placeholder.png' %}" alt="Servicio">
+        <p>Logo y identidad</p>
+      </div>
+
+      <div class="service-card">
+        <img src="{%  static 'img/placeholder.png' %}" alt="Servicio">
+        <p>Logo y identidad</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="popular-services">
+      <div class="popular-header">
+          <h2>Servicios populares</h2>
+          <button class="btn-more">Ver más →</button>
+      </div>
+
+      <div class="services-grid">
+          <div class="service-card">
+              <img src="{%  static 'img/placeholder.png' %}" alt="Servicio">
+              <h3>Heading</h3>
+          </div>
+
+          <div class="service-card">
+              <img src="{%  static 'img/placeholder.png' %}" alt="Servicio">
+              <h3>Heading</h3>
+          </div>
+
+          <div class="service-card">
+              <img src="{%  static 'img/placeholder.png' %}" alt="Servicio">
+              <h3>Heading</h3>
+          </div>
+      </div>
+  </section>
+
+</body>
+
+</html>
