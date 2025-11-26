@@ -1,484 +1,3172 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Página Prototipo</title>
-<link rel="stylesheet" href="{% static 'css/styles_index.css' %}" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODISEÑO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@500;600;700&family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/global.css' %}">
+<style id="sections-styles">
+/* CSS for section section:Header */
+.header-section {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(247, 243, 255, 0.95);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.07);
+    padding: 16px 32px;
+  }
 
+  .header-container {
+    max-width: 1620px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .header-logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--color-text-dark);
+  }
+
+  .header-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--color-text-dark);
+  }
+
+  .dropdown-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .header-right {
+    display: flex;
+    gap: 8px;
+  }
+
+  .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 32px;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .btn-outline {
+    border: 1px solid var(--color-text-dark);
+    color: var(--color-text-dark);
+    background-color: transparent;
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: 1px solid var(--color-primary);
+  }
+
+  @media (max-width: 1200px) {
+    .header-nav {
+      display: none;
+    }
+  }
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column;
+      gap: 16px;
+    }
+    .header-right {
+      width: 100%;
+      justify-content: space-around;
+    }
+    .btn {
+      flex-grow: 1;
+      font-size: 16px;
+      padding: 12px 16px;
+    }
+  }
+
+/* CSS for section section:Hero */
+.hero-section {
+    position: relative;
+    padding-top: 115px;
+    padding-bottom: 112px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-text-light);
+  }
+
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-main);
+    z-index: -1;
+  }
+
+  .hero-container {
+    position: relative;
+    width: 100%;
+    max-width: 1684px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-decorative-shape-1 {
+    position: absolute;
+    width: 169px;
+    height: 166px;
+    left: 196px;
+    top: 103px;
+    opacity: 0.06;
+  }
+
+  .hero-decorative-shape-2 {
+    position: absolute;
+    width: 152.31px;
+    height: 166px;
+    right: 171px;
+    top: 103px;
+    opacity: 0.2;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.4;
+    opacity: 0.9;
+    margin-top: 29px;
+  }
+
+  .hero-search-box {
+    margin-top: 143px;
+    width: 1016px;
+    height: 90px;
+    background-color: var(--color-background-light);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  
+  .hero-search-placeholder {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--color-text-dark);
+    opacity: 0.6;
+    margin-left: 43px;
+  }
+
+  .hero-search-button {
+    width: 252px;
+    height: 60px;
+    background-color: var(--color-primary);
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .hero-tags {
+    margin-top: 53px;
+    display: flex;
+    gap: 24px;
+    opacity: 0.85;
+  }
+
+  .hero-tag {
+    border: 2px solid var(--color-text-light);
+    border-radius: 15px;
+    padding: 15px 24px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--color-text-light);
+  }
+
+  .hero-side-btn {
+    position: absolute;
+    top: 157px;
+    width: 190px;
+    height: 58px;
+    border-radius: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--color-white);
+  }
+
+  .hero-side-btn-left {
+    left: 111px;
+    background-color: var(--color-secondary);
+    box-shadow: 0px 0px 16px 1px rgba(241, 234, 255, 0.47);
+  }
+
+  .hero-side-btn-right {
+    right: 114px;
+    background-color: #69418a;
+  }
+
+  @media (max-width: 1200px) {
+    .hero-side-btn { display: none; }
+    .hero-search-box { width: 90%; }
+  }
+
+  @media (max-width: 768px) {
+    .hero-section { padding: 60px 16px; }
+    .hero-title { font-size: 36px; }
+    .hero-subtitle { font-size: 18px; }
+    .hero-search-box { flex-direction: column; height: auto; gap: 10px; padding: 20px; }
+    .hero-search-button { width: 100%; }
+    .hero-tags { flex-direction: column; gap: 10px; width: 100%; }
+    .hero-tag { width: 100%; box-sizing: border-box; text-align: center; }
+  }
+
+/* CSS for section section:Services */
+.services-section {
+    background-color: #EFE9FF;;
+    padding: 64px 0;
+  }
+
+  .services-container {
+    max-width: 1524px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 64px;
+  }
+
+  .services-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--color-text-dark);
+  }
+
+  .services-btn {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 7px 49px;
+    border-radius: 200px;
+  }
+
+  .logo-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .logo-item {
+    background-color: var(--color-background-medium);
+    flex: 1;
+    min-width: 150px;
+    height: 187px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo-item img {
+    width: 120.6px;
+    height: 39.93px;
+  }
+
+  .popular-title {
+    margin-top: 461px;
+    margin-bottom: 64px;
+  }
+
+  @media (max-width: 1024px) {
+    .logo-grid {
+      justify-content: center;
+    }
+    .popular-title {
+      margin-top: 120px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .services-header {
+      flex-direction: column;
+      gap: 24px;
+      text-align: center;
+    }
+    .popular-title {
+      margin-top: 80px;
+    }
+  }
+
+/* CSS for section section:Purpose */
+.purpose-section {
+    background-color: #EFE9FF; /* Approximated from 30:2514 opacity */
+    padding: 99px 0 105px;
+  }
+
+  .purpose-container {
+    max-width: 1624px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 146px;
+  }
+
+  .purpose-main-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--color-text-dark);
+  }
+
+  .purpose-content-card {
+    background-color: var(--color-background-medium);
+    border: 1px solid #1d4ed8;
+    padding: 48px 64px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 1522px;
+    box-sizing: border-box;
+  }
+
+  .purpose-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 41px;
+    flex: 1;
+  }
+
+  .purpose-icon-wrapper {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #1d4ed8;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .purpose-headings h3 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    color: #2563eb;
+    margin-bottom: 8px;
+  }
+
+  .purpose-headings p {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    color: #2563eb;
+  }
+
+  .purpose-button {
+    background-color: var(--color-white);
+    border: 1px solid #1d4ed8;
+    padding: 12px 24px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #2563eb;
+  }
+
+  .purpose-image-wrapper img {
+    width: 179px;
+    height: 216px;
+  }
+
+  .purpose-pagination {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .pagination-arrow {
+    background-color: var(--color-text-dark);
+    border-radius: 200px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .pagination-arrow img {
+    width: 16px;
+    height: 16px;
+  }
+  .pagination-dots {
+    display: flex;
+    gap: 16px;
+  }
+  .dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--color-text-light);
+    background-color: rgba(109, 0, 214, 0.7);
+  }
+  .dot.active {
+    background-color: rgba(45, 16, 73, 0.8);
+    border: 1px solid rgba(109, 0, 214, 0.7);
+  }
+  
+  @media (max-width: 992px) {
+    .purpose-content-card {
+      flex-direction: column-reverse;
+      text-align: center;
+    }
+    .purpose-text-content {
+      align-items: center;
+    }
+  }
+
+/* CSS for section section:Features */
+.features-section {
+    padding: 130px 0;
+    background-color: #EFE9FF; /* Approximated from 30:2514 opacity */
+  }
+
+  .features-container {
+    max-width: 1511px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .features-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 136px;
+  }
+
+  .features-grid {
+    display: flex;
+    gap: 32px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .feature-card {
+    background-color: var(--color-background-medium);
+    border: 1px solid #1d4ed8;
+    border-radius: 25px;
+    padding: 175px 61px 83px;
+    flex: 1;
+    max-width: 482px;
+    text-align: center;
+    position: relative;
+  }
+
+  .feature-icon {
+    position: absolute;
+    top: 103px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 69px;
+    height: 57px;
+  }
+
+  .feature-card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 276px;
+  }
+
+  .feature-card-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .features-btn {
+    margin-top: 88px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 7px 71px;
+    border-radius: 200px;
+  }
+
+  @media (max-width: 1024px) {
+    .features-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+    .feature-card-title {
+      margin-bottom: 32px;
+    }
+    .feature-card {
+      padding: 120px 30px 40px;
+    }
+    .feature-icon {
+      top: 40px;
+    }
+  }
+
+/* CSS for section section:CtaCards */
+.cta-cards-section {
+    padding: 128px 0;
+  }
+
+  .cta-cards-container {
+    max-width: 1511px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-cards-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 116px;
+  }
+
+  .cta-cards-grid {
+    display: flex;
+    gap: 32px;
+    width: 100%;
+  }
+
+  .cta-card {
+    flex: 1;
+    border-radius: 25px;
+    padding: 20px 16px;
+    position: relative;
+    overflow: hidden;
+    min-height: 98px;
+  }
+
+  .cta-card-mipyme {
+    background-color: var(--color-secondary);
+  }
+
+  .cta-card-designer {
+    background-color: var(--color-primary);
+  }
+
+  .cta-card-bg-icon {
+    position: absolute;
+    top: -192px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 69px;
+    height: 57px;
+  }
+
+  .cta-card-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .cta-card-icon-wrapper {
+    width: 60px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cta-card-icon-wrapper img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .cta-card-text {
+    color: var(--color-white);
+    flex-grow: 1;
+  }
+
+  .cta-card-text h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1;
+    margin-bottom: 15px;
+  }
+
+  .cta-card-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1;
+  }
+
+  .cta-card-arrow {
+    width: 49px;
+    height: 49px;
+  }
+
+  @media (max-width: 992px) {
+    .cta-cards-grid {
+      flex-direction: column;
+    }
+  }
+
+/* CSS for section section:SuccessCases */
+.success-cases-section {
+    padding: 125px 0 125px;
+  }
+  .success-cases-container {
+    max-width: 1542px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .success-cases-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 44px;
+  }
+  .header-text h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.5;
+  }
+  .header-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    opacity: 0.95;
+  }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .btn-more {
+    border: 1px solid var(--color-black);
+    border-radius: 35px;
+    padding: 5px 46px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    opacity: 0.95;
+  }
+  .header-nav-arrows {
+    position: relative;
+    width: 196.47px;
+    height: 54.28px;
+  }
+  .case-study-card {
+    position: relative;
+    width: 100%;
+    height: 381px;
+    border: 1px solid var(--color-black);
+    border-radius: 15px;
+    background-image: url("{% static 'images/placeholder.png' %}"); /* Placeholder for 30:2646 */
+    background-color: #d9d9d9;
+    background-position: right -169px top 0;
+    background-repeat: no-repeat;
+    background-size: 534px 381px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .case-study-content {
+    width: 864px;
+    height: 100%;
+    background-color: var(--color-white);
+    border-radius: 15px;
+    padding: 20px 27px;
+    box-sizing: border-box;
+  }
+  .case-study-tabs {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+  }
+  .tab {
+    padding: 3px 20px;
+    border-radius: 35px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid var(--color-black);
+    color: var(--color-black);
+  }
+  .tab.active {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-weight: 600;
+  }
+  .case-study-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.25;
+  }
+  .case-study-title span {
+    font-weight: 400;
+  }
+  .case-study-tags {
+    display: flex;
+    gap: 10px;
+    margin-top: 46px;
+  }
+  .tag {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #707070;
+    opacity: 0.75;
+  }
+  .tag-dark {
+    background-color: #292929;
+    color: rgba(255, 255, 255, 0.95);
+    padding: 3px 8px;
+    border-radius: 5px;
+  }
+  .case-study-need {
+    margin-top: 25px;
+  }
+  .case-study-need h4, .case-study-testimonial h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 6px;
+  }
+  .case-study-need p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.2;
+    opacity: 0.75;
+  }
+  .case-study-testimonial {
+    margin-top: 25px;
+  }
+  .testimonial-box {
+    border: 1px solid var(--color-black);
+    border-radius: 10px;
+    padding: 11px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .avatar {
+    border-radius: 50%;
+    width: 37px;
+    height: 37px;
+  }
+  .testimonial-text h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    opacity: 0.88;
+  }
+  .testimonial-text p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    opacity: 0.85;
+  }
+  .rating {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .rating span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .designer-info {
+    position: absolute;
+    right: 40px;
+    bottom: 20px;
+  }
+  .designer-info p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    opacity: 0.8;
+    margin-bottom: 7px;
+  }
+  .designer-details {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+  }
+  .designer-details .avatar {
+    width: 49px;
+    height: 48px;
+  }
+  .designer-details h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .designer-details span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+  }
+  .badge {
+    position: absolute;
+    right: -12px;
+    top: 0;
+    width: 22px;
+    height: 22px;
+  }
+  .btn-cta {
+    margin-top: 60px;
+    background-color: #9a43d4;
+    color: var(--color-white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    padding: 11px 17px;
+    border-radius: 200px;
+  }
+  @media (max-width: 1200px) {
+    .case-study-card {
+      height: auto;
+      background-image: none;
+      padding: 0;
+    }
+    .case-study-content {
+      width: 100%;
+      position: static;
+    }
+    .designer-info {
+      position: static;
+      margin-top: 20px;
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+    }
+  }
+  @media (max-width: 768px) {
+    .success-cases-header { flex-direction: column; gap: 20px; text-align: center; }
+    .testimonial-box { flex-direction: column; text-align: center; gap: 8px; }
+    .rating { margin-left: 0; }
+  }
+
+/* CSS for section section:HowItWorks */
+.how-it-works-section {
+    padding: 128px 0;
+  }
+
+  .how-it-works-container {
+    max-width: 1517px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .how-it-works-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 138px;
+  }
+
+  .how-it-works-grid {
+    display: flex;
+    gap: 32px;
+    width: 100%;
+  }
+
+  .step-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .step-image {
+    width: 100%;
+    max-width: 484px;
+    height: 256px;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+
+  .step-content {
+    background-color: #bfdbfe;
+    border-radius: 6px;
+    padding: 24px 19px;
+    text-align: center;
+    width: 100%;
+    max-width: 371px;
+    box-sizing: border-box;
+  }
+
+  .step-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .step-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  @media (max-width: 992px) {
+    .how-it-works-grid {
+      flex-direction: column;
+    }
+  }
+
+/* CSS for section section:Jobs */
+.jobs-section {
+    padding: 105px 0 105px;
+  }
+  .jobs-container {
+    max-width: 1517px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    gap: 86px;
+  }
+  .jobs-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .jobs-column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 107px;
+  }
+  .jobs-column-header h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+  }
+  .btn-view-more {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 7px 20px;
+    border-radius: 200px;
+  }
+  .jobs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .job-card {
+    display: flex;
+    gap: 24px;
+    border-top: 1px solid #bfdbfe;
+    padding-top: 32px;
+  }
+  .job-card-image {
+    position: relative;
+    width: 164px;
+    height: 166px;
+    flex-shrink: 0;
+  }
+  .job-card-details {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+  .job-card-main {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .job-card-category {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    color: #2563eb;
+  }
+  .job-card-title {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #1d4ed8;
+  }
+  .job-card-tags {
+    display: flex;
+    gap: 24px;
+    margin-top: auto;
+  }
+  .job-card-tags span {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: #2563eb;
+  }
+  .job-card-aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .job-card-nav {
+    border: 1px solid #2563eb;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .job-card-nav span {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    color: #2563eb;
+  }
+  .job-card-price {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #1d4ed8;
+  }
+  @media (max-width: 992px) {
+    .jobs-container {
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 768px) {
+    .job-card {
+      flex-direction: column;
+    }
+    .job-card-details {
+      flex-direction: column;
+      gap: 16px;
+    }
+    .job-card-aside {
+      flex-direction: row;
+      width: 100%;
+    }
+  }
+
+/* CSS for section section:FinalCta */
+.final-cta-section {
+    position: relative;
+    height: 496px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 32px;
+  }
+  .final-cta-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  .final-cta-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--color-black);
+    max-width: 960px;
+  }
+
+/* CSS for section section:Footer */
+.footer-section {
+    background-color: #4A2B70; /* Approximated from image */
+    color: var(--color-text-light);
+    padding: 100px 0;
+  }
+  .footer-container {
+    max-width: 1519px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    padding-bottom: 100px;
+    border-bottom: 1px solid rgba(247, 243, 255, 0.2);
+  }
+  .footer-brand {
+    flex-basis: 33%;
+  }
+  .footer-logo-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .footer-logo-icon {
+    width: 48px;
+    height: 48px;
+    background-color: var(--color-text-light);
+    border: 1px solid var(--color-text-light);
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-logo-icon img {
+    width: 39px;
+    height: 39px;
+  }
+  .footer-logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 44px;
+  }
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    gap: 32px;
+  }
+  .footer-column h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 26px;
+  }
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .footer-column ul li a {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+  }
+  .footer-copyright {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+  }
+  .footer-legal-links {
+    display: flex;
+    gap: 24px;
+  }
+  .footer-legal-links a {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+  }
+  .footer-socials {
+    display: flex;
+    gap: 24px;
+  }
+  .footer-socials a {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+  .footer-socials img {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 992px) {
+    .footer-top, .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+      gap: 40px;
+    }
+    .footer-links {
+      flex-direction: column;
+    }
+  }
+   /* Estilos para Servicios que tu negocio necesita */
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+
+    .services-section {
+      max-width: 1650px;
+      margin: 0 auto;
+      background-color: #EFE9FF;
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 48px;
+      
+    }
+
+    .services-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 38px;
+      color: #2d1949;
+      letter-spacing: -0.5px;
+    }
+
+    .btn-ver-mas {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 28px 12px 32px;
+      background-color: transparent;
+      border: 2px solid #2d1949;
+      border-radius: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: #2d1949;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-ver-mas:hover {
+      background-color: #2d1949;
+      color: white;
+    }
+
+    .btn-ver-mas::after {
+      content: '›';
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background-color: #ffffff;
+      border-radius: 20px;
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(45, 25, 73, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(45, 25, 73, 0.15);
+    }
+
+    .service-icon {
+      width: 90px;
+      height: 70px;
+      background-color: #a65151;
+      border-radius: 12px;
+      margin-bottom: 24px;
+    }
+
+    .service-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 17px;
+      color: #2d1949;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 1200px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 40px 20px;
+      }
+
+      .services-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+      }
+
+      .services-title {
+        font-size: 28px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .service-card {
+        padding: 32px 20px;
+      }
+
+      .service-icon {
+        width: 70px;
+        height: 56px;
+      }
+
+      .service-name {
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Estilos para Servicios Populares */
+    .popular-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .popular-card {
+      border-radius: 20px;
+      padding: 60px 40px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 240px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .popular-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    .gradient-purple {
+      background: linear-gradient(135deg, #5B4FE9 0%, #8B5CF6 100%);
+    }
+
+    .gradient-pink {
+      background: linear-gradient(135deg, #B84592 0%, #D94F9A 100%);
+    }
+
+    .gradient-orange {
+      background: linear-gradient(135deg, #FF6B6B 0%, #F59E0B 100%);
+    }
+
+    .popular-icon {
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: auto;
+    }
+
+    .popular-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 22px;
+      color: #2d1949;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 1024px) {
+      .popular-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .popular-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .popular-card {
+        padding: 50px 32px 32px;
+        min-height: 200px;
+      }
+    }
+    /* Sección Nuestro Propósito */
+    .purpose-section {
+      max-width: 100%;
+      background-color: #ffffff;
+    }
+
+    .purpose-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 80px 60px;
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+      color: #2d1949;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .purpose-card {
+      background-color: #dbeafe;
+      border-radius: 20px;
+      padding: 48px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 80px;
+      margin-bottom: 48px;
+    }
+
+    .purpose-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .purpose-icon-small {
+      width: 32px;
+      height: 32px;
+      border: 2px dashed #3b82f6;
+      border-radius: 4px;
+      padding: 6px;
+      color: #3b82f6;
+    }
+
+    .purpose-heading {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 600;
+      font-size: 32px;
+      color: #2563eb;
+      margin-bottom: 8px;
+    }
+
+    .purpose-text {
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #2563eb;
+    }
+
+    .purpose-button {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 28px;
+      background-color: transparent;
+      border: 2px solid #3b82f6;
+      border-radius: 6px;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: #2563eb;
+      text-decoration: none;
+      align-self: flex-start;
+      transition: all 0.3s ease;
+    }
+
+    .purpose-button:hover {
+      background-color: #2563eb;
+      color: white;
+    }
+
+    .purpose-image {
+      width: 140px;
+      height: 160px;
+      border: 2px dashed #3b82f6;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .purpose-image svg {
+      width: 60px;
+      height: 60px;
+      color: #3b82f6;
+    }
+
+    /* Pagination */
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .pagination-arrow {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: #2d1949;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .pagination-arrow:hover {
+      background-color: #6636bd;
+      transform: scale(1.05);
+    }
+
+    .pagination-arrow svg {
+      width: 20px;
+      height: 20px;
+      color: white;
+    }
+
+    .pagination-dots {
+      display: flex;
+      gap: 12px;
+    }
+
+    .pagination-dot {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: rgba(109, 0, 214, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .pagination-dot.active {
+      background-color: #7c3aed;
+    }
+
+    .pagination-dot:hover {
+      background-color: #7c3aed;
+    }
+    
+     /* Sección Nuestros Servicios */
+    .services-features-section {
+      max-width: 100%;
+      background-color: #ffffff;
+    }
+    .services-features-inner {
+      max-width: 1400px;         /* o el ancho que prefieras */
+      margin: 0 auto;            /* centra horizontalmente */
+      padding: 80px 80px 60px;
+    }
+
+    .services-grid {
+      display: grid;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .service-feature-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .service-icon-wrapper {
+      width: 140px;
+      height: 140px;
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      border-radius: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 32px;
+      position: relative;
+    }
+
+    .service-icon-wrapper::before,
+    .service-icon-wrapper::after {
+      content: '';
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: #a65151;
+    }
+
+    .service-icon-wrapper::before {
+      top: -8px;
+      left: 20px;
+    }
+
+    .service-icon-wrapper::after {
+      bottom: -8px;
+      right: 20px;
+    }
+
+    .service-icon-wrapper svg {
+      width: 60px;
+      height: 60px;
+      color: rgba(255, 255, 255, 0.3);
+      z-index: 1;
+    }
+
+    .service-feature-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: #2d1949;
+      margin-bottom: 16px;
+    }
+
+    .service-feature-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #4a5568;
+      max-width: 320px;
+    }
+
+    .services-cta {
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn-comenzar {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 48px;
+      background-color: #6636bd;
+      border: none;
+      border-radius: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn-comenzar:hover {
+      background-color: #5528a0;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 54, 189, 0.3);
+    }
+
+    .btn-comenzar::after {
+      content: '›';
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 1024px) {
+      .purpose-section,
+      .services-features-section {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+
+      .purpose-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .purpose-button {
+        align-self: center;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    /* Sección CTA Cards */
+    .cta-dual-section {
+      background-color: #EFE9FF;
+      padding: 80px 80px 100px;
+    }
+
+    .cta-dual-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .cta-dual-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+      color: #2d1949;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .cta-dual-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .cta-dual-card {
+      border-radius: 24px;
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cta-dual-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-dual-card-orange {
+      background: linear-gradient(135deg, #FF8A56 0%, #D4A800 100%);
+    }
+
+    .cta-dual-card-purple {
+      background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
+    }
+
+    .cta-dual-icon {
+      width: 56px;
+      height: 56px;
+      border: 3px dashed rgba(165, 81, 81, 0.6);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(165, 81, 81, 0.2);
+    }
+
+    .cta-dual-icon svg {
+      width: 32px;
+      height: 32px;
+      color: #a65151;
+    }
+
+    .cta-dual-content h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 32px;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .cta-dual-content p {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.95);
+      line-height: 1.4;
+    }
+
+    .cta-dual-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 32px;
+      background-color: #ffffff;
+      border: none;
+      border-radius: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #2d1949;
+      text-decoration: none;
+      align-self: flex-start;
+      margin-top: auto;
+      transition: all 0.3s ease;
+    }
+
+    .cta-dual-button:hover {
+      background-color: #f3f4f6;
+      transform: translateX(4px);
+    }
+
+    .cta-dual-button::after {
+      content: '→';
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    /* Sección Testimonios */
+    .testimonials-gradient-section {
+      background: linear-gradient(90deg, #9B7BB5 0%, #C89BCF 30%, #E8A6A6 60%, #F5C77E 100%);
+      padding: 80px 80px;
+      position: relative;
+    }
+
+    .testimonials-gradient-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .testimonials-gradient-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .testimonials-gradient-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 40px;
+      color: #ffffff;
+    }
+
+    .testimonials-gradient-nav {
+      display: flex;
+      gap: 16px;
+    }
+
+    .testimonials-gradient-arrow {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background-color: #6636bd;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .testimonials-gradient-arrow:hover {
+      background-color: #5528a0;
+      transform: scale(1.05);
+    }
+
+    .testimonials-gradient-arrow svg {
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
+
+    .testimonials-gradient-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .testimonial-gradient-card {
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonial-gradient-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    }
+
+    .testimonial-gradient-stars {
+      display: flex;
+      gap: 4px;
+    }
+
+    .testimonial-gradient-stars svg {
+      width: 20px;
+      height: 20px;
+      fill: #fbbf24;
+    }
+
+    .testimonial-gradient-quote {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #2d1949;
+    }
+
+    .testimonial-gradient-author {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-top: 12px;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .testimonial-gradient-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: #2d1949;
+    }
+
+    .testimonial-gradient-role {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .testimonials-gradient-dots {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .testimonials-gradient-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(45, 25, 73, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .testimonials-gradient-dot.active-dot {
+      background-color: #2d1949;
+      width: 32px;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 1024px) {
+      .cta-dual-section,
+      .testimonials-gradient-section {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+
+      .cta-dual-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .testimonials-gradient-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .testimonials-gradient-header {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .cta-dual-section,
+      .testimonials-gradient-section {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+
+      .cta-dual-title,
+      .testimonials-gradient-title {
+        font-size: 28px;
+      }
+
+      .cta-dual-card {
+        padding: 36px 28px;
+        min-height: 240px;
+      }
+
+      .testimonials-gradient-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    /* Sección Casos de Éxito */
+    .success-story-wrapper {
+      background-color: #EFE9FF;
+      padding: 80px 80px;
+    }
+
+    .success-story-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .success-story-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 48px;
+    }
+
+    .success-story-title-group h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+      color: #2d1949;
+      margin-bottom: 4px;
+    }
+
+    .success-story-title-group p {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      color: #6b7280;
+    }
+
+    .success-story-nav-group {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .success-story-btn-link {
+      padding: 10px 28px;
+      border: 2px solid #2d1949;
+      border-radius: 30px;
+      background-color: transparent;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: #2d1949;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .success-story-btn-link:hover {
+      background-color: #2d1949;
+      color: white;
+    }
+
+    .success-story-arrows {
+      display: flex;
+      gap: 12px;
+    }
+
+    .success-story-arrow-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: #a65151;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .success-story-arrow-btn:hover {
+      background-color: #8a4444;
+      transform: scale(1.05);
+    }
+
+    .success-story-arrow-btn svg {
+      width: 24px;
+      height: 24px;
+      color: white;
+    }
+
+    .success-story-card-wrapper {
+      background-color: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 40px;
+      margin-bottom: 48px;
+      position: relative;
+    }
+
+    .success-story-main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .success-story-tabs {
+      display: flex;
+      gap: 12px;
+    }
+
+    .success-story-tab {
+      padding: 6px 20px;
+      border-radius: 20px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      border: 1px solid #2d1949;
+      background-color: transparent;
+      color: #2d1949;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .success-story-tab.active-tab {
+      background-color: #2d1949;
+      color: white;
+      font-weight: 600;
+    }
+
+    .success-story-business-info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .success-story-business-type {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: #6b7280;
+    }
+
+    .success-story-business-name {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 28px;
+      color: #2d1949;
+    }
+
+    .success-story-business-name span {
+      font-weight: 400;
+      color: #9ca3af;
+    }
+
+    .success-story-tags-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .success-story-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .success-story-tag.highlighted-tag {
+      background-color: #2d1949;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 6px;
+    }
+
+    .success-story-need-block {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .success-story-need-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #2d1949;
+    }
+
+    .success-story-need-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #4b5563;
+    }
+
+    .success-story-client-block {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .success-story-client-card {
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .success-story-client-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: #2d1949;
+      flex-shrink: 0;
+    }
+
+    .success-story-client-info {
+      flex: 1;
+    }
+
+    .success-story-client-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #2d1949;
+      margin-bottom: 2px;
+    }
+
+    .success-story-client-quote {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.4;
+    }
+
+    .success-story-rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .success-story-rating svg {
+      width: 18px;
+      height: 18px;
+      fill: #fbbf24;
+    }
+
+    .success-story-rating span {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .success-story-sidebar {
+      background-color: #e5e7eb;
+      border-radius: 16px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .success-story-dots-indicator {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .success-story-dot-item {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #2d1949;
+    }
+
+    .success-story-designer-block {
+      margin-top: auto;
+    }
+
+    .success-story-designer-label {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 12px;
+    }
+
+    .success-story-designer-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+    }
+
+    .success-story-designer-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background-color: #2d1949;
+      flex-shrink: 0;
+    }
+
+    .success-story-designer-details h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: #2d1949;
+      margin-bottom: 2px;
+    }
+
+    .success-story-designer-details p {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .success-story-badge {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      background-color: #a65151;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    .success-story-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 40px;
+      background-color: #9B43D4;
+      border: none;
+      border-radius: 30px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: white;
+      text-decoration: none;
+      align-self: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .success-story-cta-btn:hover {
+      background-color: #8534b8;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(155, 67, 212, 0.3);
+    }
+
+    .success-story-cta-btn::after {
+      content: '→';
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    /* Sección Cómo Funciona el Match */
+    .match-process-wrapper {
+      background-color: #ffffff;
+      padding: 80px 80px;
+    }
+
+    .match-process-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .match-process-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+      color: #2d1949;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .match-process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .match-process-card {
+      background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
+      border-radius: 24px;
+      padding: 48px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 320px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .match-process-card::before,
+    .match-process-card::after {
+      content: '';
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: rgba(165, 81, 81, 0.5);
+    }
+
+    .match-process-card::before {
+      top: 20px;
+      left: 20px;
+    }
+
+    .match-process-card::after {
+      top: 20px;
+      right: 20px;
+    }
+
+    .match-process-decorative {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: rgba(165, 81, 81, 0.5);
+    }
+
+    .match-process-decorative-alt {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: rgba(165, 81, 81, 0.5);
+    }
+
+    .match-process-illustration {
+      width: 100%;
+      max-width: 200px;
+      height: 140px;
+      background-color: rgba(45, 25, 73, 0.2);
+      border-radius: 16px;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+
+    .match-process-illustration svg {
+      width: 80px;
+      height: 80px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .match-process-content {
+      z-index: 1;
+    }
+
+    .match-process-step-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .match-process-step-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    @media (max-width: 1024px) {
+      .success-story-wrapper,
+      .match-process-wrapper {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+
+      .success-story-card-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .success-story-sidebar {
+        min-height: 200px;
+      }
+
+      .match-process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .success-story-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+      }
+    }
+  
+  </style>
+  <script src="global.js" defer></script>
 </head>
 <body>
-
-<header>
-  <button>Nosotros</button>
-  <button>Portafolios</button>
-  <button>Anuncios</button>
-  <button>Iniciar Sesión</button>
+<header id="header" class="header-section">
+  <div class="header-container">
+    <div class="header-left">
+      <a href="index.html" class="header-logo">CODISEÑO</a>
+      <nav class="header-nav">
+        <a href="#purpose" class="header-nav-link">Nuestro propósito</a>
+        <a href="#services" class="header-nav-link">Para mi negocio</a>
+        <a href="busqueda.html" class="header-nav-link">
+          Diseñadores
+          <img src="{% static 'images/30_2291.svg' %}" alt="dropdown icon" class="dropdown-icon">
+        </a>
+        <a href="#success-cases" class="header-nav-link">Casos reales</a>
+        <a href="#jobs" class="header-nav-link">Buscar trabajo</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <a href="login.html" class="btn btn-outline">Iniciar sesión</a>
+      <a href="login.html" class="btn btn-primary">Registrarse</a>
+    </div>
+  </div>
 </header>
+<section id="hero" class="hero-section">
+  <div class="hero-bg"></div>
+  <div class="hero-container">
+    <div class="hero-decorative-shape-1">
+      <!--merged image-->
+      <img src="{% static 'images/30_2255.svg' %}" alt="decorative shape" style="position: absolute; top: -21.00px; left: 98.05px; width: 266.39px; height: 212.00px;">
+    </div>
+    <div class="hero-decorative-shape-2">
+      <!--merged image-->
+      <img src="{% static 'images/30_2258.svg' %}" alt="decorative shape" style="position: absolute; top: -21.00px; left: -6.14px; width: 240.08px; height: 212.00px;">
+    </div>
 
-<div class="container">
-
-  <section class="hero">
-    <img alt="Paisaje" src="{% static 'img/nube.png' %}"/>
+    <a href="#" class="hero-side-btn hero-side-btn-left">Soy mipyme</a>
     <div class="hero-content">
-      <div class="title">Ponle Diseño</div>
-      <div class="subtitle">Y haz crecer tu negocio</div>
-      <div class="line short"></div>
-      <div class="line medium"></div>
-      <div class="toggle-purple"><div class="circle"></div></div>
-      <div class="buttons">
-        <div class="button-sm"></div>
-        <div class="button-sm"></div>
-        <div class="button-sm" style="width: 110px"></div>
+      <h1 class="hero-title">
+        Diseño Profesional<br>para Mipymes Chilenas
+      </h1>
+      <p class="hero-subtitle">
+        Conecta, colabora y crece<br>La plataforma que une el talento profesional con tu negocio
+      </p>
+      <div class="hero-search-box">
+        <span class="hero-search-placeholder">¿Que necesitas diseñar?</span>
+        <button class="hero-search-button"></button>
+      </div>
+      <div class="hero-tags">
+        <a href="#" class="hero-tag">Logo profesional</a>
+        <a href="#" class="hero-tag">Quiero mejorar mis redes</a>
+        <a href="#" class="hero-tag">Diseño de producto</a>
       </div>
     </div>
-  </section>
-
-  <div class="long-toggle">
-    <div class="circle"></div>
+    <a href="#" class="hero-side-btn hero-side-btn-right">Soy diseñador</a>
   </div>
-
-  <section class="categories-section">
-    <div class="section-header">
-      <button class="section-title">categorías</button>
-      <button class="btn-empty"></button>
-    </div>
-    <div class="carousel-container" id="categories-carousel">
-      <div class="carousel-item card dark-purple">
-        <div class="text-content">
-          <h4>Título 1</h4>
-          <p>Subtítulo</p>
-          <label class="switch"><input type="checkbox"><span class="slider"></span></label>
-        </div>
-        <div class="image-placeholder">
-          <img src="{% static 'img/nube.png' %}" alt="">
-        </div>
-      </div>
-      <div class="carousel-item card purple">
-        <div class="text-content">
-          <h4>Título 2</h4>
-          <p>Subtítulo</p>
-          <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
-        </div>
-        <div class="image-placeholder">
-          <img src="{% static 'img/nube.png' %}" alt="">
-        </div>
-      </div>
-      <div class="carousel-item card coral">
-        <div class="text-content">
-          <h4>Título 3</h4>
-          <p>Subtítulo</p>
-          <label class="switch"><input type="checkbox"><span class="slider"></span></label>
-        </div>
-        <div class="image-placeholder">
-          <img src="{% static 'img/nube.png' %}" alt="">
-        </div>
-      </div>
-    </div>
-    <button class="carousel-arrow next" data-carousel="categories-carousel">›</button>
-  </section>
-
-  <section class="market-section">
-    <div class="market-text">
-      <div class="market-title">valor en el mercado</div>
-      <div class="market-lines">
-        <div class="line medium"></div>
-        <div class="line medium line-short"></div>
-        <div class="line medium"></div>
-      </div>
-      <div class="market-toggle">
-        <div class="circle"></div>
-      </div>
-    </div>
-    <div class="market-image">
-      <img src="{% static 'img/nube.png' %}" alt="">
-    </div>
-  </section>
-
-  <section class="needs-section">
-    <div class="needs-header">Lo que tu negocio necesita</div>
-    <div class="needs-lines needs-line1"></div>
-    <div class="needs-lines needs-line2"></div>
-    <div class="needs-cards">
-      <div class="needs-card navy">
-        <img  src="{% static 'img/nube.png' %}" alt="Perfil" />
-        <div class="needs-line-title"></div>
-        <div class="needs-line-text"></div>
-        <p>
-          Diseño de marca, web.
-        </p>
-        <div class="needs-toggle">
-          <div class="purple-circle"></div>
-        </div>
-      </div>
-      <div class="needs-card purple">
-        <img src="{% static 'img/nube.png' %}" alt="Perfil" />
-        <div class="needs-line-title"></div>
-        <div class="needs-line-text"></div>
-        <p>
-          Diseño de marca, web.
-        </p>
-        <div class="needs-toggle">
-          <div class="purple-circle"></div>
-        </div>
-      </div>
-      <div class="needs-card pink">
-        <img src="{% static 'img/nube.png' %}" alt="Perfil" />
-        <div class="needs-line-title"></div>
-        <div class="needs-line-text"></div>
-        <p>
-          Diseño de marca, web.
-        </p>
-        <div class="needs-toggle">
-          <div class="purple-circle"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="portafolios-header">
-    <div class="title-box">portafolios</div>
-    <div class="categories-filter">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div class="long-filter"></div>
-    </div>
-  </section>
-
-  <section class="portafolios-grid">
-    <div class="portfolio-card">
-      <div class="portfolio-image">
-        <img src="{% static 'img/nube.png' %}" alt="">
-      </div>
-      <div class="portfolio-info">
-        <div class="portfolio-avatar">
-          <img src="{% static 'img/nube.png' %}" alt="">
-        </div>
-        <div class="portfolio-texts">
-          <h4>Proyecto 1</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="portfolio-dots">
-          <span></span><span></span><span></span><span></span>
-        </div>
-      </div>
-    </div>
-    <div class="portfolio-card">
-      <div class="portfolio-image">
-        <img src="{% static 'img/nube.png' %}" alt="">
-      </div>
-      <div class="portfolio-info">
-        <div class="portfolio-avatar">
-          <img src="{% static 'img/nube.png' %}" alt="">
-        </div>
-        <div class="portfolio-texts">
-          <h4>Proyecto 1</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="portfolio-dots">
-          <span></span><span></span><span></span><span></span>
-        </div>
-      </div>
-    </div>
-    <div class="portfolio-card">
-      <div class="portfolio-image">
-        <img src="{% static 'img/nube.png' %}" alt="">
-      </div>
-      <div class="portfolio-info">
-        <div class="portfolio-avatar">
-          <img src="{% static 'img/nube.png' %}" alt="">
-        </div>
-        <div class="portfolio-texts">
-          <h4>Proyecto 1</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="portfolio-dots">
-          <span></span><span></span><span></span><span></span>
-        </div>
-      </div>
-    </div>
-    <div class="portfolio-card">
-      <div class="portfolio-image">
-        <img src="{% static 'img/nube.png' %}" alt="">
-      </div>
-      <div class="portfolio-info">
-        <div class="portfolio-avatar">
-          <img src="{% static 'img/nube.png' %}" alt="">
-        </div>
-        <div class="portfolio-texts">
-          <h4>Proyecto 1</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="portfolio-dots">
-          <span></span><span></span><span></span><span></span>
-        </div>
-      </div>
-    </div>
-    <div class="portfolio-card">
-      <div class="portfolio-image">
-        <img src="{% static 'img/nube.png' %}" alt="">
-      </div>
-      <div class="portfolio-info">
-        <div class="portfolio-avatar">
-          <img src="{% static 'img/nube.png' %}" alt="">
-        </div>
-        <div class="portfolio-texts">
-          <h4>Proyecto 1</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="portfolio-dots">
-          <span></span><span></span><span></span><span></span>
-        </div>
-      </div>
-    </div>
-    <div class="portfolio-card">
-      <div class="portfolio-image">
-        <img src="{% static 'img/nube.png' %}" alt="">
-      </div>
-      <div class="portfolio-info">
-        <div class="portfolio-avatar">
-          <img src="{% static 'img/nube.png' %}" alt="">
-        </div>
-        <div class="portfolio-texts">
-          <h4>Proyecto 1</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="portfolio-dots">
-          <span></span><span></span><span></span><span></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="portafolios-header"> 
-  <div class="title-box">Antes y Después</div>
 </section>
-
-<section class="antes-despues">
-  <div class="carousel-wrapper">
-    <div class="carousel-track">
-      <!-- Slide 1 -->
-        <div class="slide">
-          <div class="slide-image">
-            <img src="{% static 'img/nube.png' %}" alt="Antes y Después 1">
-            <div class="red-circle left"></div>
-            <div class="red-circle right"></div>
-          </div>
-          <div class="slide-right-panel">
-            <div class="slide-card">
-              <h3 class="card-title">Proyecto Diseño Web</h3>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <div class="textss-lines">
-                <div class="line medium"></div>
-                <div class="line medium line-short"></div>
-              </div>
-              <div class="card-lines">
-                <div class="line-item">
-                  <div class="red-circle"></div>
-                  <div class="line red"></div>
-                </div>
-                <div class="line-item">
-                    <div class="red-circle"></div>
-                    <div class="line lighter-red"></div>
-                </div>
-                <div class="line-item">
-                  <div class="red-circle"></div>
-                    <div class="line blue"></div>
-                </div>
-              </div>
-              <div class="card-buttons">
-                <div class="circle-button"></div>
-                <div class="circle-button"></div>
-              </div>
-            </div>
-            <div class="extra-info">
-              <div class="line-item">
-                <p class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-                <div class="red-circle"></div>
-                <div class="line red"></div>
-              </div>
-              <div class="line-item">
-                <div class="red-circle"></div>
-                <div class="line lighter-red"></div>
-              </div>
-              <div class="line-item">
-                <div class="red-circle"></div>
-                <div class="line blue"></div>
-              </div>
-                <div class="card-buttons" style="margin-top: 20px;">
-                  <div class="circle-button"></div>
-                  <div class="circle-button"></div>
-                </div>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-          <div class="slide-image">
-            <img src="{% static 'img/nube.png' %}" alt="Antes y Después 1">
-            <div class="red-circle left"></div>
-            <div class="red-circle right"></div>
-          </div>
-          <div class="slide-right-panel">
-            <div class="slide-card">
-              <h3 class="card-title">Proyecto Diseño Web</h3>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <div class="textss-lines">
-                <div class="line medium"></div>
-                <div class="line medium line-short"></div>
-              </div>
-              <div class="card-lines">
-                <div class="line-item">
-                  <div class="red-circle"></div>
-                  <div class="line red"></div>
-                </div>
-                <div class="line-item">
-                    <div class="red-circle"></div>
-                    <div class="line lighter-red"></div>
-                </div>
-                <div class="line-item">
-                  <div class="red-circle"></div>
-                    <div class="line blue"></div>
-                </div>
-              </div>
-              <div class="card-buttons">
-                <div class="circle-button"></div>
-                <div class="circle-button"></div>
-              </div>
-            </div>
-            <div class="extra-info">
-              <div class="line-item">
-                <p class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-                <div class="red-circle"></div>
-                <div class="line red"></div>
-              </div>
-              <div class="line-item">
-                <div class="red-circle"></div>
-                <div class="line lighter-red"></div>
-              </div>
-              <div class="line-item">
-                <div class="red-circle"></div>
-                <div class="line blue"></div>
-              </div>
-                <div class="card-buttons" style="margin-top: 20px;">
-                  <div class="circle-button"></div>
-                  <div class="circle-button"></div>
-                </div>
-            </div>
-          </div>
-        </div>
-        <div class="slide">
-          <div class="slide-image">
-            <img src="{% static 'img/nube.png' %}" alt="Antes y Después 1">
-            <div class="red-circle left"></div>
-            <div class="red-circle right"></div>
-          </div>
-          <div class="slide-right-panel">
-            <div class="slide-card">
-              <h3 class="card-title">Proyecto Diseño Web</h3>
-              <p class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <div class="textss-lines">
-                <div class="line medium"></div>
-                <div class="line medium line-short"></div>
-              </div>
-              <div class="card-lines">
-                <div class="line-item">
-                  <div class="red-circle"></div>
-                  <div class="line red"></div>
-                </div>
-                <div class="line-item">
-                    <div class="red-circle"></div>
-                    <div class="line lighter-red"></div>
-                </div>
-                <div class="line-item">
-                  <div class="red-circle"></div>
-                    <div class="line blue"></div>
-                </div>
-              </div>
-              <div class="card-buttons">
-                <div class="circle-button"></div>
-                <div class="circle-button"></div>
-              </div>
-            </div>
-            <div class="extra-info">
-              <div class="line-item">
-                <p class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-                <div class="red-circle"></div>
-                <div class="line red"></div>
-              </div>
-              <div class="line-item">
-                <div class="red-circle"></div>
-                <div class="line lighter-red"></div>
-              </div>
-              <div class="line-item">
-                <div class="red-circle"></div>
-                <div class="line blue"></div>
-              </div>
-                <div class="card-buttons" style="margin-top: 20px;">
-                  <div class="circle-button"></div>
-                  <div class="circle-button"></div>
-                </div>
-            </div>
-          </div>
-        </div>
+<section class="services-section">
+    <div class="services-header">
+      <h2 class="services-title">Servicios que tu negocio necesita</h2>
+      <a href="#" class="btn-ver-mas">Ver más</a>
     </div>
-    <div class="center-bottom-dots"></div>
-  </div>
 
-  <div class="arrow-right" style="align-self: center;">&gt;</div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"></div>
+        <h3 class="service-name">Logo y identidad</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"></div>
+        <h3 class="service-name">Diseño Web</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"></div>
+        <h3 class="service-name">Logo y identidad</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"></div>
+        <h3 class="service-name">Logo y identidad</h3>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon"></div>
+        <h3 class="service-name">Logo y identidad</h3>
+      </div>
+    </div>
 </section>
+<section class="services-section" style="margin-top: 80px;">
+    <div class="services-header">
+      <h2 class="services-title">Servicios populares</h2>
+      <a href="#" class="btn-ver-mas">Ver más</a>
+    </div>
 
+    <div class="popular-grid">
+      <div class="popular-card gradient-purple">
+        <svg class="popular-icon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="10" width="36" height="28" rx="2" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 18L20 24L28 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="32" cy="22" r="3" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <h3 class="popular-title">Heading</h3>
+      </div>
+
+      <div class="popular-card gradient-pink">
+        <svg class="popular-icon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="10" width="36" height="28" rx="2" stroke="currentColor" stroke-width="2"/>
+          <path d="M12 18L20 24L28 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="32" cy="22" r="3" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <h3 class="popular-title">Heading</h3>
+      </div>
+
+      <div class="popular-card gradient-orange">
+        <svg class="popular-icon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="10" width="36" height="28" rx="2" stroke="currentColor" stroke-width="2"/>
+          <circle cx="32" cy="22" r="3" stroke="currentColor" stroke-width="2"/>
+          <path d="M6 32L16 22L24 30L42 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3 class="popular-title">Heading</h3>
+      </div>
+    </div>
+</section>
+<div class="section-wrapper">
+  <section class="purpose-section">
+      <div class="purpose-inner">
+      
+        <h2 class="section-title">Nuestro propósito</h2>
+        <div class="purpose-card">
+          <div class="purpose-content">
+            <div class="purpose-icon-small">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                <path d="M2 17l10 5 10-5"/>
+                <path d="M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            
+            <div>
+              <h3 class="purpose-heading">Heading</h3>
+              <p class="purpose-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+
+            <a href="#" class="purpose-button">Button Text</a>
+          </div>
+
+          <div class="purpose-image">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="pagination">
+          <button class="pagination-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+
+          <div class="pagination-dots">
+            <span class="pagination-dot">1</span>
+            <span class="pagination-dot active">2</span>
+            <span class="pagination-dot">3</span>
+          </div>
+
+          <button class="pagination-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+  </section>
 </div>
+<section class="services-features-section">
+    <div class="services-features-inner">
+        <h2 class="section-title">Nuestros servicios</h2>
 
-<section class="last-section">
-  <div class="nav-chips">
-    <div class="nav-chip"></div>
-    <div class="nav-chip"></div>
-    <div class="nav-chip"></div>
-  </div>
-  <div class="cta-box">
-    ¿Tu negocio necesita ayuda? <br /><strong>¡Ponle Diseño!</strong>
-  </div>
-  <div class="category-toggle">
-    <div class="circle"></div>
-  </div>
-  <div class="nav-chips" style="margin-top: 40px; gap: 30px;">
-    <div class="nav-chip"></div>
-    <div class="nav-chip"></div>
-    <div class="nav-chip"></div>
-    <div class="nav-chip"></div>
-    <div class="nav-chip"></div>
-    <div class="nav-chip"></div>
+      <div class="services-grid">
+        <div class="service-feature-card">
+          <div class="service-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3 class="service-feature-title">Match Inteligente</h3>
+          <p class="service-feature-desc">Brief que entiende lo que necesitas para conectarte con el diseñador ideal</p>
+        </div>
+
+        <div class="service-feature-card">
+          <div class="service-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3 class="service-feature-title">Proceso Guiado</h3>
+          <p class="service-feature-desc">Te acompañamos en cada paso desde el brief hasta la entrega final</p>
+        </div>
+
+        <div class="service-feature-card">
+          <div class="service-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <h3 class="service-feature-title">Comunicación Integrada</h3>
+          <p class="service-feature-desc">Chat, calendario y panel de progreso todo en un solo lugar</p>
+        </div>
+      </div>
+
+        <div class="services-cta">
+          <a href="#" class="btn-comenzar">Comenzar</a>
+        </div>
+    </div>
+</section>
+<!-- Sección CTA Cards -->
+<section class="cta-dual-section">
+  <div class="cta-dual-container">
+    <h2 class="cta-dual-title">¿Eres mipyme o diseñador?</h2>
+
+    <div class="cta-dual-grid">
+      <div class="cta-dual-card cta-dual-card-orange">
+        <div class="cta-dual-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+
+        <div class="cta-dual-content">
+          <h3>Soy Mipyme</h3>
+          <p>Encuentra tu diseñador ideal con nuestro brief</p>
+        </div>
+
+        <a href="#" class="cta-dual-button">Comenzar Brief</a>
+      </div>
+
+      <div class="cta-dual-card cta-dual-card-purple">
+        <div class="cta-dual-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+            <path d="M2 2l7.586 7.586"/>
+            <circle cx="11" cy="11" r="2"/>
+          </svg>
+        </div>
+
+        <div class="cta-dual-content">
+          <h3>Soy Diseñador</h3>
+          <p>Conecta con proyectos reales y clientes serios</p>
+        </div>
+
+        <a href="#" class="cta-dual-button">Crear Perfil</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<footer>
-  <div class="nav-chips">
-    <div class="nav-chip"></div>
-    <div class="nav-chip"></div>
-    <div class="nav-chip"></div>
-    <div class="nav-chip"></div>
-    <div class="nav-chip wide"></div>
-    <div class="nav-dot"></div>
-    <div class="nav-dot"></div>
-    <div class="nav-dot"></div>
+<!-- Sección Testimonios -->
+<section class="testimonials-gradient-section">
+  <div class="testimonials-gradient-container">
+    <div class="testimonials-gradient-header">
+      <h2 class="testimonials-gradient-title">Lo que dicen nuestros clientes</h2>
+      
+      <div class="testimonials-gradient-nav">
+        <button class="testimonials-gradient-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="testimonials-gradient-arrow">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="testimonials-gradient-grid">
+      <div class="testimonial-gradient-card">
+        <div class="testimonial-gradient-stars">
+          <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
+        </div>
+
+        <p class="testimonial-gradient-quote">
+          "Encontré al diseñador perfecto para mi marca. El proceso fue simple y el resultado superó mis expectativas."
+        </p>
+
+        <div class="testimonial-gradient-author">
+          <span class="testimonial-gradient-name">María González</span>
+          <span class="testimonial-gradient-role">Emprendedora, Pastelería Dulce Momento</span>
+        </div>
+      </div>
+
+      <div class="testimonial-gradient-card">
+        <div class="testimonial-gradient-stars">
+          <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
+        </div>
+
+        <p class="testimonial-gradient-quote">
+          "Finalmente una plataforma donde encuentro clientes serios que valoran el diseño profesional."
+        </p>
+
+        <div class="testimonial-gradient-author">
+          <span class="testimonial-gradient-name">Carlos Fernández</span>
+          <span class="testimonial-gradient-role">Diseñador Gráfico</span>
+        </div>
+      </div>
+
+      <div class="testimonial-gradient-card">
+        <div class="testimonial-gradient-stars">
+          <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
+          <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
+        </div>
+
+        <p class="testimonial-gradient-quote">
+          "El brief inteligente me ayudó a comunicar exactamente lo que necesitaba. ¡Excelente experiencia!"
+        </p>
+
+        <div class="testimonial-gradient-author">
+          <span class="testimonial-gradient-name">Ana Martínez</span>
+          <span class="testimonial-gradient-role">Emprendedor, Boutique Estilo</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonials-gradient-dots">
+      <span class="testimonials-gradient-dot active-dot"></span>
+      <span class="testimonials-gradient-dot"></span>
+      <span class="testimonials-gradient-dot"></span>
+      <span class="testimonials-gradient-dot"></span>
+    </div>
+  </div>
+</section>
+
+
+<!-- Sección Casos de Éxito -->
+<section class="success-story-wrapper">
+  <div class="success-story-container">
+    <div class="success-story-header">
+      <div class="success-story-title-group">
+        <h2>Casos de Éxito</h2>
+        <p>Casos reales de negocios como el tuyo</p>
+      </div>
+
+      <div class="success-story-nav-group">
+        <a href="#" class="success-story-btn-link">Conocer más</a>
+        
+        <div class="success-story-arrows">
+          <button class="success-story-arrow-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          <button class="success-story-arrow-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="success-story-card-wrapper">
+      <div class="success-story-main-content">
+        <div class="success-story-tabs">
+          <button class="success-story-tab active-tab">Solicitud</button>
+          <button class="success-story-tab">Desarrollo de servicio</button>
+        </div>
+
+        <div class="success-story-business-info">
+          <span class="success-story-business-type">Restaurante</span>
+          <h3 class="success-story-business-name">
+            Dulces Momentos <span>12-04</span>
+          </h3>
+        </div>
+
+        <div class="success-story-tags-row">
+          <span class="success-story-tag">Diseño de publicidad 📱</span>
+          <span class="success-story-tag">Diseño digital 💻</span>
+          <span class="success-story-tag highlighted-tag">Como tus clientes te ven</span>
+        </div>
+
+        <div class="success-story-need-block">
+          <h4 class="success-story-need-label">Necesidad</h4>
+          <p class="success-story-need-text">
+            "Mi pastelería era rica, pero mi imagen no lo demostraba. La gente pasaba frente a mi local y no entraba. Mis redes sociales no atraían clientes nuevos."
+          </p>
+        </div>
+
+        <div class="success-story-client-block">
+          <h4 class="success-story-need-label">Cliente</h4>
+          <div class="success-story-client-card">
+            <div class="success-story-client-avatar"></div>
+            <div class="success-story-client-info">
+              <p class="success-story-client-name">Ana Fernández</p>
+              <p class="success-story-client-quote">
+                "Carlos entendió lo que necesitaba. Ahora la gente reconoce mi pastelería"
+              </p>
+            </div>
+            <div class="success-story-rating">
+              <svg viewBox="0 0 20 20">
+                <path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/>
+              </svg>
+              <span>/5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="success-story-sidebar">
+        <div class="success-story-dots-indicator">
+          <span class="success-story-dot-item"></span>
+          <span class="success-story-dot-item"></span>
+          <span class="success-story-dot-item"></span>
+          <span class="success-story-dot-item"></span>
+        </div>
+
+        <div class="success-story-designer-block">
+          <p class="success-story-designer-label">Diseñado por:</p>
+          <div class="success-story-designer-info">
+            <div class="success-story-designer-avatar"></div>
+            <div class="success-story-designer-details">
+              <h4>Carlos López</h4>
+              <p>Especialidad en identidad visual</p>
+            </div>
+            <div class="success-story-badge"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center;">
+      <a href="#" class="success-story-cta-btn">Comenzar mi brief guiado</a>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Sección Cómo Funciona el Match -->
+<section class="match-process-wrapper">
+  <div class="match-process-container">
+    <h2 class="match-process-title">¿Cómo funciona el Match?</h2>
+
+    <div class="match-process-grid">
+      <div class="match-process-card">
+        <span class="match-process-decorative"></span>
+        <span class="match-process-decorative-alt"></span>
+        
+        <div class="match-process-illustration">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+          </svg>
+        </div>
+
+        <div class="match-process-content">
+          <h3 class="match-process-step-title">Completa tu brief</h3>
+          <p class="match-process-step-desc">Cuentanos sobre tu negocio y necesidades</p>
+        </div>
+      </div>
+
+      <div class="match-process-card">
+        <span class="match-process-decorative"></span>
+        <span class="match-process-decorative-alt"></span>
+        
+        <div class="match-process-illustration">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+
+        <div class="match-process-content">
+          <h3 class="match-process-step-title">Recibe propuestas</h3>
+          <p class="match-process-step-desc">Diseñadores ideales te contactarán lo antes posible</p>
+        </div>
+      </div>
+
+      <div class="match-process-card">
+        <span class="match-process-decorative"></span>
+        <span class="match-process-decorative-alt"></span>
+        
+        <div class="match-process-illustration">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+
+        <div class="match-process-content">
+          <h3 class="match-process-step-title">Comienza a trabajar</h3>
+          <p class="match-process-step-desc">Colabora con herramientas integradas</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<footer id="footer" class="footer-section">
+  <div class="footer-container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo-wrapper">
+          <div class="footer-logo-icon">
+            <img src="{% static 'images/30_2460.svg' %}" alt="Codiseño logo icon">
+          </div>
+          <span class="footer-logo-text">CODISEÑO</span>
+        </a>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Heading</h4>
+          <ul>
+            <li><a href="#">Lorem Ipsum</a></li>
+            <li><a href="#">Lorem Ipsum</a></li>
+            <li><a href="#">Lorem Ipsum</a></li>
+            <li><a href="#">Lorem Ipsum</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Heading</h4>
+          <ul>
+            <li><a href="#">Lorem Ipsum</a></li>
+            <li><a href="#">Lorem Ipsum</a></li>
+            <li><a href="#">Lorem Ipsum</a></li>
+            <li><a href="#">Lorem Ipsum</a></li>
+            <li><a href="#">Lorem Ipsum</a></li>
+            <li><a href="#">Lorem Ipsum</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Heading</h4>
+          <ul>
+            <li><a href="#">Lorem Ipsum</a></li>
+            <li><a href="#">Lorem Ipsum</a></li>
+            <li><a href="#">Lorem Ipsum</a></li>
+            <li><a href="#">Lorem Ipsum</a></li>
+            <li><a href="#">Lorem Ipsum</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <div class="footer-legal-links">
+        <a href="#">Lorem Ipsum</a>
+        <a href="#">Lorem Ipsum</a>
+        <a href="#">Lorem Ipsum</a>
+        <a href="#">Lorem Ipsum</a>
+      </div>
+      <div class="footer-socials">
+        <a href="#"><img src="{% static 'images/30_2497.svg' %}" alt="Social Icon 1"></a>
+        <a href="#"><img src="{% static 'images/30_2500.svg' %}" alt="Social Icon 2"></a>
+        <a href="#"><img src="{% static 'images/30_2503.svg' %}" alt="Social Icon 3"></a>
+        <a href="#"><img src="{% static 'images/30_2506.svg' %}" alt="Social Icon 4"></a>
+      </div>
+    </div>
   </div>
 </footer>
-
-<script src="{% static 'js/script_index.js' %}"></script>
 </body>
 </html>
