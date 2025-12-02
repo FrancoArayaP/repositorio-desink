@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseñadores - CODISEÑO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #201435;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #201435;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-secondary {
+            padding: 0.5rem 1.5rem;
+            border: 1px solid #6366f1;
+            background: white;
+            color: #6366f1;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            padding: 0.5rem 1.5rem;
+            background: #6636BD;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Hero Section Purple */
+        .hero-purple {
+            background: linear-gradient(135deg, #6F36FF 0%, #8B5CF6 100%);
+            padding: 5rem 5%;
+            color: white;
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-purple h1 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: bold;
+            line-height: 1.3;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-purple ul {
+            list-style: none;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+            padding-left: 2rem;
+        }
+
+        .hero-purple li {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 2rem;
+            font-weight: 500;
+        }
+
+        .hero-purple li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #E8E6F5;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            color: #1f2937;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cta-btn {
+            padding: 1rem 2.5rem;
+            background: #FD636B;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .cta-btn-icon {
+            width: 20px;
+            height: 20px;
+            border: 2px solid white;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero-purple h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-purple li {
+                font-size: 1.2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-btn {
+                width: 100%;
+                max-width: 400px;
+                justify-content: center;
+            }
+        }
+
+    /* Nuestros Servicios Section */
+        .our-services {
+            padding: 4rem 5%;
+            background: #E8E6F5;
+        }
+
+        .services-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-header h2 {
+            font-size: 2rem;
+            color: #000;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .btn-designer {
+            padding: 0.8rem 2rem;
+            background: #6636BD;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-designer:hover {
+            background: #5528a0;
+            transform: translateY(-2px);
+        }
+
+        .services-grid-purple {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card-purple {
+            background: #7C75D6;
+            border-radius: 15px;
+            overflow: hidden;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .service-card-purple:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .service-image-placeholder {
+            width: 120px;
+            height: 80px;
+            background: #D4B5FF;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        /* Servicios Más Solicitados Section */
+        .most-requested {
+            padding: 4rem 5%;
+            background: #E8E6F5;
+        }
+
+        .requested-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .requested-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .requested-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+       
+        .card-close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 30px;
+            height: 30px;
+            background: #60A5FA;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .card-close-btn:hover {
+            background: #3B82F6;
+        }
+
+        .requested-image-area {
+            width: 100%;
+            height: 220px;
+            background: #DBEAFE;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .requested-image-area img {
+             width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+
+        .requested-info {
+            background: #2563EB;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .requested-info h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin: 0;
+        }
+
+        .card-dropdown-btn {
+            width: 30px;
+            height: 30px;
+            background: white;
+            color: #2563EB;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .card-dropdown-btn:hover {
+            background: #f3f4f6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .services-header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .services-grid-purple {
+                grid-template-columns: 1fr;
+            }
+            
+            .requested-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Destacado de solicitudes Section */
+        .job-highlight {
+            padding: 4rem 5% 2rem 5%;
+            background: #E8E6F5;
+        }
+
+        .job-highlight h2 {
+            font-size: 2rem;
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .job-subtitle {
+            font-size: 1.1rem;
+            color: #1f2937;
+            line-height: 1.6;
+            max-width: 800px;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 4rem 5%;
+            background: #E8E6F5;
+            text-align: center;
+        }
+
+        .testimonials-section h2 {
+            font-size: 2.5rem;
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 3rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-bubble {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-bubble:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .testimonial-bubble.active {
+            background: #2563EB;
+            color: white;
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: #666;
+            margin-bottom: 1rem;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-bubble.active .quote-icon {
+            color: white;
+        }
+
+        .testimonial-bubble p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .testimonial-bubble.active p {
+            color: white;
+        }
+
+        .testimonial-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 15px solid white;
+        }
+
+        .testimonial-bubble.active::after {
+            border-top-color: #2563EB;
+        }
+        
+
+        .testimonials-authors {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 1.5rem auto 0;
+        }
+
+        .author {
+            text-align: center;
+        }
+
+        .author-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .author h4 {
+            font-size: 1.1rem;
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+
+        .author p {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: normal;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-authors {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .testimonial-bubble {
+                padding: 2rem 1.5rem;
+            }
+        }
+        /* Tips para Destacar Section */
+        .tips-section {
+            padding: 4rem 0 6rem 0;
+            background: #E7E4FA;
+        }
+
+        .tips-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #000;
+            text-align: center;
+            padding: 0 5%;
+            font-weight: bold;
+        }
+
+        .tips-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            width: 100%;
+            align-items: center;
+            background: #d6d2f8;
+            padding: 3rem 5%;
+            border-radius: 0;
+        }
+
+        .tips-info {
+            padding: 1rem;
+            max-width: 600px;
+        }
+
+        .tips-info h3 {
+            color: #652D8B;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .tips-info p {
+            color: #652D8B;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .btn-tips {
+            padding: 0.8rem 2rem;
+            background: transparent;
+            color: #5E25EB;
+            border: 2px dashed #5E25EB;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-tips:hover {
+            background: #5E25EB;
+            color: white;
+            border-style: solid;
+            transform: translateY(-2px);
+        }
+
+        .tips-image {
+            width: 100%;
+            max-width: 500px;
+            height: 400px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-left: auto;
+        }
+
+        .tips-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            padding: 0 5%;
+        }
+
+        .page-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .page-btn.prev-page,
+        .page-btn.next-page {
+            background: #2563EB;
+        }
+
+        .page-btn.prev-page span,
+        .page-btn.next-page span {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .page-btn.page-number {
+            background: white;
+            color: #2563EB;
+            border: 2px dashed #93C5FD;
+        }
+
+        .page-btn.page-number.active {
+            background: white;
+            color: #2563EB;
+            border: 2px dashed #93C5FD;
+        }
+
+        .page-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .tips-content {
+                grid-template-columns: 1fr;
+                padding: 2rem 5%;
+            }
+            
+            .tips-image {
+                height: 300px;
+                margin-left: 0;
+            }
+            
+            .tips-section h2 {
+                font-size: 2rem;
+            }
+        }
+        /* Políticas y Seguridad Section */
+        .policies-section {
+            padding: 4rem 5%;
+            background: #E8E6F5;
+        }
+
+        .policies-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 3rem;
+        }
+
+        .policies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .policy-card {
+            background: #7C75D6;
+            border-radius: 15px;
+            overflow: hidden;
+            min-height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .policy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .policy-image-placeholder {
+            width: 120px;
+            height: 70px;
+            background: #D4B5FF;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .policies-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .policies-section h2 {
+                font-size: 2rem;
+            }
+        }
+        /* CTA Purple Section */
+        .cta-purple-section {
+            background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
+            padding: 6rem 5%;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-purple-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .cta-purple-btn {
+            padding: 1rem 3rem;
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cta-purple-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .cta-purple-icon {
+            width: 24px;
+            height: 24px;
+            border: 2px solid white;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        /* Bottom Footer */
+        .bottom-footer {
+            background: white;
+            padding: 3rem 5%;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo h3 {
+            font-size: 1.5rem;
+            color: #201435;
+            margin: 0;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .footer-columns {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-link {
+            color: #6366f1;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 5px;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .footer-link:hover {
+            color: #4f46e5;
+            background: #f3f4f6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cta-purple-section h2 {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .footer-columns {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">CODISEÑO</div>
+        <nav>
+            <ul>
+                <li><a href="#">Nuestro Propósito</a></li>
+                <li><a href="#">Para Mi Negocio</a></li>
+                <li><a href="#">Diseñadores</a></li>
+                <li><a href="#">Casos Reales</a></li>
+                <li><a href="#">Buscar Trabajo</a></li>
+            </ul>
+        </nav>
+        <div class="header-buttons">
+            <button class="btn-secondary">Iniciar Sesión</button>
+            <button class="btn-primary">Registrarse</button>
+        </div>
+    </header>
+
+    <!-- Hero Purple Section -->
+    <section class="hero-purple">
+        <h1>Titular: "Encuentra Clientes Serios y Proyectos de Valor. gestión, pagos justos, metodología).</h1>
+        
+        <ul>
+            <li>Profesional: "Valoramos tu expertise..."</li>
+            <li>Empoderador: "Herramientas para que brilles..."</li>
+            <li>Respetuoso: "Tu tiempo vale, tu talento importa..."</li>
+        </ul>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>"Únete ahora - Conecta con proyectos serios"</h2>
+        
+        <div class="cta-buttons">
+            <button class="cta-btn">
+                Logo profesional
+                <span class="cta-btn-icon">+</span>
+            </button>
+            <button class="cta-btn">
+                Quiero mejorar mis redes
+                <span class="cta-btn-icon">+</span>
+            </button>
+            <button class="cta-btn">
+                Diseño de producto
+                <span class="cta-btn-icon">+</span>
+            </button>
+            <button class="cta-btn">
+                Diseño de producto
+                <span class="cta-btn-icon">+</span>
+            </button>
+        </div>
+    </section>
+
+
+    <!-- Nuestros Servicios Section -->
+    <section class="our-services">
+        <div class="services-header">
+            <h2>Nuestros servicios</h2>
+            <button class="btn-designer">Soy diseñador</button>
+        </div>
+        
+        <div class="services-grid-purple">
+            <div class="service-card-purple">
+                <div class="service-image-placeholder">
+                    <img src="img/descargar.png" alt="Categoría 2">
+                </div>
+            </div>
+            <div class="service-card-purple">
+                <div class="service-image-placeholder">
+                    <img src="img/descargar.png" alt="Categoría 2">
+                </div>
+            </div>
+            <div class="service-card-purple">
+                <div class="service-image-placeholder">
+                    <img src="img/descargar.png" alt="Categoría 2">
+                </div>
+            </div>
+            <div class="service-card-purple">
+                <div class="service-image-placeholder">
+                    <img src="img/descargar.png" alt="Categoría 2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Más Solicitados Section -->
+    <section class="most-requested">
+        <div class="services-header">
+            <h2>Servicios más solicitados</h2>
+            <button class="btn-designer">Soy diseñador</button>
+        </div>
+        
+        <div class="requested-grid">
+            <div class="requested-card">
+                <div class="requested-image-area">
+                    <img src="img/descargar.png" alt="Categoría 2">
+                </div>
+                <div class="requested-info">
+                    <h3>Heading</h3>
+                    <button class="card-dropdown-btn">⌄</button>
+                </div>
+            </div>
+            
+            <div class="requested-card">
+                <div class="requested-image-area">
+                    <img src="img/descargar.png" alt="Categoría 2">
+                </div>
+                <div class="requested-info">
+                    <h3>Heading</h3>
+                    <button class="card-dropdown-btn">⌄</button>
+                </div>
+            </div>
+            
+            <div class="requested-card">
+                <div class="requested-image-area">
+                    <img src="img/descargar.png" alt="Categoría 2">
+                </div>
+                <div class="requested-info">
+                    <h3>Heading</h3>
+                    <button class="card-dropdown-btn">⌄</button>
+                </div>
+            </div>
+            
+            <div class="requested-card">
+                <div class="requested-image-area">
+                    <img src="img/descargar.png" alt="Categoría 2">
+                </div>
+                <div class="requested-info">
+                    <h3>Heading</h3>
+                    <button class="card-dropdown-btn">⌄</button>
+                </div>
+            </div>
+            
+            <div class="requested-card">
+                <div class="requested-image-area">
+                    <img src="img/descargar.png" alt="Categoría 2">
+                </div>
+                <div class="requested-info">
+                    <h3>Heading</h3>
+                    <button class="card-dropdown-btn">⌄</button>
+                </div>
+            </div>
+            
+            <div class="requested-card">
+                <div class="requested-image-area">
+                    <img src="img/descargar.png" alt="Categoría 2">
+                </div>
+                <div class="requested-info">
+                    <h3>Heading</h3>
+                    <button class="card-dropdown-btn">⌄</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Destacado de solicitudes Section -->
+    <section class="job-highlight">
+        <h2>Destacado de solicitudes de empleo</h2>
+        <p class="job-subtitle">Un pequeño grid de diseñadores verificados para aumentar la confianza en la plataforma.</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <h2>What our client says</h2>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-bubble">
+                <div class="quote-icon">"</div>
+                <p>When our designs need an expert opinion or approval, I know I can rely on your agency Thank you for all your help-I will be recommending you to everyone</p>
+            </div>
+            
+            <div class="testimonial-bubble active">
+                <div class="quote-icon">"</div>
+                <p>When our designs need an expert opinion or approval, I know I can rely on your agency Thank you for all your help-I will be recommending you to everyone</p>
+                <div class="bubble-arrow"></div>
+            </div>
+            
+            <div class="testimonial-bubble">
+                <div class="quote-icon">"</div>
+                <p>When our designs need an expert opinion or approval, I know I can rely on your agency Thank you for all your help-I will be recommending you to everyone</p>
+            </div>
+        </div>
+        
+        <div class="testimonials-authors">
+            <div class="author">
+                <img src="img/persona.png" alt="Kera Joo" class="author-photo">
+                <h4>Kera Joo</h4>
+                <p>Support</p>
+            </div>
+            
+            <div class="author">
+                <img src="img/persona.png" alt="Alen Max" class="author-photo">
+                <h4>Alen Max</h4>
+                <p>Designer</p>
+            </div>
+            
+            <div class="author">
+                <img src="img/persona.png" alt="Tom Koch" class="author-photo">
+                <h4>Tom Koch</h4>
+                <p>Developer</p>
+            </div>
+        </div>
+    </section>
+    <!-- Tips para Destacar Section -->
+    <section class="tips-section">
+        <h2>Tips para Destacar</h2>
+        
+        <div class="tips-content">
+            <div class="tips-info">
+                <h3>Heading</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <button class="btn-tips">Button Text</button>
+            </div>
+            
+            <div class="tips-image">
+                <img src="img/descargar.png" alt="Tips image">
+            </div>
+        </div>
+        
+        <div class="pagination">
+            <button class="page-btn prev-page">
+                <span>&lt;</span>
+            </button>
+            <button class="page-btn page-number">1</button>
+            <button class="page-btn page-number">2</button>
+            <button class="page-btn page-number">3</button>
+            <button class="page-btn page-number active">4</button>
+            <button class="page-btn next-page">
+                <span>&gt;</span>
+            </button>
+        </div>
+    </section>
+    <!-- Políticas y Seguridad Section -->
+    <section class="policies-section">
+        <h2>Políticas y seguridad</h2>
+        
+        <div class="policies-grid">
+            <div class="policy-card">
+                <div class="policy-image-placeholder">
+                    <img src="img/descargar.png" alt="Categoría 2">
+                </div>
+            </div>
+            
+            <div class="policy-card">
+                <div class="policy-image-placeholder">
+                   <img src="img/descargar.png" alt="Categoría 2">
+                </div>
+            </div>
+            
+            <div class="policy-card">
+                <div class="policy-image-placeholder">
+                    <img src="img/descargar.png" alt="Categoría 2">
+                </div>
+            </div>
+            
+            <div class="policy-card">
+                <div class="policy-image-placeholder">
+                    <img src="img/descargar.png" alt="Categoría 2">
+                </div>
+            </div>
+            
+            <div class="policy-card">
+                <div class="policy-image-placeholder">
+                    <img src="img/descargar.png" alt="Categoría 2">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Purple Section -->
+    <section class="cta-purple-section">
+        <h2>Diseño Codiseño</h2>
+        <button class="cta-purple-btn">
+            <span>placeholder text</span>
+            <span class="cta-purple-icon">+</span>
+        </button>
+    </section>
+
+    <!-- Bottom Footer -->
+    <footer class="bottom-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>CODISEÑO</h3>
+            </div>
+            
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <a href="#" class="footer-link">text</a>
+                </div>
+                <div class="footer-column">
+                    <a href="#" class="footer-link">text</a>
+                </div>
+                <div class="footer-column">
+                    <a href="#" class="footer-link">text</a>
+                </div>
+                <div class="footer-column">
+                    <a href="#" class="footer-link">text</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
