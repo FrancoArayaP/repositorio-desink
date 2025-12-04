@@ -414,39 +414,95 @@
       </div>
     </div>
 
-    <!-- Formulario de Login -->
+    <!-- Formulario de Registro -->
     <div class="auth-form-container">
-      <div id="loginForm">
+      <div id="registerForm">
         <div class="auth-form-header">
-          <h1 class="auth-form-title">Iniciar sesión</h1>
-          <p class="auth-form-subtitle">Ingresa tus credenciales para continuar</p>
+          <h1 class="auth-form-title">Crear cuenta</h1>
+          <p class="auth-form-subtitle">Únete a la comunidad de CODISEÑO</p>
         </div>
 
-        <form class="auth-form" method="POST" action="{% url 'login' %}">
+        <form class="auth-form" method="POST" action="{% url 'register' %}">
           {% csrf_token %}
-          
-          <div class="auth-form-group">
-            <label class="auth-form-label">Correo electrónico</label>
-            <input type="email" name="email" class="auth-form-input" required>
+          <div class="auth-form-row">
+            <div class="auth-form-group">
+              <label class="auth-form-label">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+                Nombre
+              </label>
+              <input type="text" name="first_name" class="auth-form-input" placeholder="Juan" required>
+            </div>
+
+            <div class="auth-form-group">
+              <label class="auth-form-label">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+                Apellido
+              </label>
+              <input type="text" name="last_name" class="auth-form-input" placeholder="Pérez" required>
+            </div>
           </div>
 
           <div class="auth-form-group">
-            <label class="auth-form-label">Contraseña</label>
-            <input type="password" name="password" class="auth-form-input" required>
+            <label class="auth-form-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              Correo electrónico
+            </label>
+            <input type="email" name="email" class="auth-form-input" placeholder="tu@email.com" required>
           </div>
-          
-          <button type="submit" class="auth-submit-btn">Iniciar sesión</button>
-          {% if messages %}
-            <div class="messages">
-              {% for message in messages %}
-                <p>{{ message }}</p>
-              {% endfor %}
+
+          <div class="auth-form-group">
+            <label class="auth-form-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0110 0v4"/>
+              </svg>
+              Contraseña
+            </label>
+            <input type="password" name="password" class="auth-form-input" placeholder="Mínimo 8 caracteres" required>
+          </div>
+
+          <div class="auth-user-type">
+            <label class="auth-form-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 16v-4"/>
+                <path d="M12 8h.01"/>
+              </svg>
+              ¿Quién eres?
+            </label>
+
+            <div class="auth-user-type-options">
+              <div class="auth-user-type-option">
+                <input type="radio" name="userType" id="designer" value="designer" class="auth-user-type-input" required>
+                <label for="designer" class="auth-user-type-label">Diseñador</label>
+              </div>
+
+              <div class="auth-user-type-option">
+                <input type="radio" name="userType" id="mipyme" value="mipyme" class="auth-user-type-input">
+                <label for="mipyme" class="auth-user-type-label">Mipyme</label>
+              </div>
+
+              <div class="auth-user-type-option">
+                <input type="radio" name="userType" id="student" value="student" class="auth-user-type-input">
+                <label for="student" class="auth-user-type-label">Estudiante</label>
+              </div>
             </div>
-          {% endif %}
+          </div>
+
+          <button type="submit" class="auth-submit-btn">Crear cuenta</button>
         </form>
 
         <p class="auth-toggle-link">
-          ¿No tienes cuenta? <a href="{% url 'register' %}">Regístrate aquí</a>
+          ¿Ya tienes cuenta? <a href="{% url 'login' %}">Inicia sesión aquí</a>
         </p>
       </div>
     </div>

@@ -21,5 +21,6 @@ from desinkApp import views as appViews
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', appViews.index, name='index'),
-    path('login/', appViews.login, name='login'),
+    path('login/', appViews.login_view, name='login'),
+    path('register/', appViews.register_view, name='register'),
 ]
