@@ -23,4 +23,6 @@ urlpatterns = [
     path('', appViews.index, name='index'),
     path('login/', appViews.login_view, name='login'),
     path('register/', appViews.register_view, name='register'),
+    path('disenador/', appViews.soydisenador_view, name='disenador'),
+    path('mipyme/', appViews.mipyme_view, name='mipyme'),
 ]

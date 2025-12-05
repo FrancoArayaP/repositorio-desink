@@ -15,16 +15,20 @@ def login_view(request):
         user = authenticate(request, username=email, password=password)
 
         if user is not None:
+            u = User.objects.get(username=email)
             auth_login(request, user)  
             messages.success(request, "Has iniciado sesión correctamente")
-            return redirect("https://www.google.com/search?client=opera-gx&q=si+funciono&sourceid=opera&ie=UTF-8&oe=UTF-8")
+            if u.profile.user_type == "designer":
+                return redirect("disenador")
+            if u.profile.user_type == "mipyme":
+                return redirect("mipyme")
+            if u.profile.user_type == "student":
+                return redirect("https://www.google.com/search?q=estudiante&client=opera-gx&hs=gW0&sca_esv=a3683385676924a2&sxsrf=AE3TifMkzCpw4aXuWsP72w5-0Vr6qcV2pw%3A1764960881813&ei=cSozaf2tMbOr1sQPtqixgAw&ved=0ahUKEwi9qpzTj6eRAxWzlZUCHTZUDMAQ4dUDCBE&uact=5&oq=estudiante&gs_lp=Egxnd3Mtd2l6LXNlcnAiCmVzdHVkaWFudGUyCxAuGIAEGLEDGMkDMggQABiABBixAzIFEAAYgAQyCxAAGIAEGLEDGIMBMgsQABiABBiSAxiKBTIEEAAYAzIFEAAYgAQyBRAAGIAEMgUQABiABDIOEAAYgAQYsQMYgwEYigUyGhAuGIAEGLEDGMkDGJcFGNwEGN4EGOAE2AEBSNkeUJAFWIUYcAN4AJABAJgBRqABwgSqAQIxMLgBA8gBAPgBAZgCCqAC8wTCAhAQIxjwBRiABBgnGMkCGIoFwgIKECMYgAQYJxiKBcICChAAGIAEGEMYigXCAg4QLhiABBixAxjRAxjHAcICCxAuGIAEGLEDGIMBwgIFEC4YgATCAggQLhiABBixA8ICFxAuGIAEGLEDGJcFGNwEGN4EGOAE2AEBwgILEC4YgAQYxwEYrwHCAgcQABiABBgKmAMAiAYBugYGCAEQARgUkgcCMTCgB4disgcCMTC4B_MEwgcFMC4yLjjIByY&sclient=gws-wiz-serp")
         else:
             messages.error(request, "Credenciales inválidas")
             return redirect("login")
 
     return render(request, "login.html")
-
-
 
 def register_view(request):
     if request.method == "POST":
@@ -52,3 +56,20 @@ def register_view(request):
         messages.success(request, "Cuenta creada correctamente. Ahora inicia sesión.")
         return redirect("login")
     return render(request, "register.html")
+
+def soydisenador_view(request):
+    nombre = request.user.first_name
+    apellido = request.user.last_name
+    tipo = request.user.profile.user_type
+    if tipo != "designer":
+        return redirect("index")
+    return render(request, 'disenador.html')
+
+def mipyme_view(request):
+    nombre = request.user.first_name
+    apellido = request.user.last_name
+    tipo = request.user.profile.user_type
+    if tipo != "mipyme":
+        return redirect("index")
+    return render(request, 'mipyme.html')  
+
