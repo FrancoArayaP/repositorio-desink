@@ -26,4 +26,8 @@ urlpatterns = [
     path('disenador/', appViews.soydisenador_view, name='disenador'),
     path('mipyme/', appViews.mipyme_view, name='mipyme'),
     path('logout/', appViews.logout_view, name='logout'),
+    path('perfil_disenador/', appViews.perfil_disenador, name='perfil_disenador'),
+    path("eliminar_portfolio/<int:portfolio_id>/", appViews.eliminar_portfolio, name="eliminar_portfolio"),
+    path("perfil_mipyme/", appViews.perfil_mipyme, name="perfil_mipyme"),
+    path("eliminar_proyecto/<int:project_id>/", appViews.eliminar_proyecto, name="eliminar_proyecto"),
 ]

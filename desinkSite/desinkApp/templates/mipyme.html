@@ -1,4 +1,6 @@
 {% load static %}
+{% load custom_filters %}
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,6 +13,264 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
     <style>
+        .projects-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project-item {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+}
+
+.project-item .card-body {
+  padding: 15px;
+}
+
+.project-item .card-title {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #4f46e5;
+}
+
+.project-item .card-text {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+        .portfolio-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.portfolio-item {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.portfolio-item .card-body {
+  padding: 15px;
+}
+
+.portfolio-item .card-title {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #4f46e5;
+}
+
+.portfolio-item .card-text {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+        /* Layout general */
+.designer-layout {
+    display: flex;
+    gap: 40px;
+    max-width: 1300px;
+    margin: auto;
+    padding: 40px;
+}
+
+/* Columna izquierda */
+.left-column {
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+/* Avatar */
+.avatar-box {
+    position: relative;
+}
+.avatar {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+.edit-btn {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: var(--color-primary);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Recuadros izquierdo */
+.section-box {
+    width: 100%;
+    min-height: 150px;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.section-box h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Columna derecha */
+.right-column {
+    width: 72%;
+}
+
+/* Portafolio */
+.portfolio-box {
+    background: rgba(255,255,255,0.18);
+    padding: 30px;
+    border-radius: 22px;
+    backdrop-filter: blur(8px);
+    color: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.portfolio-item {
+    background: #ffffff;
+    height: 150px;
+    border-radius: 16px;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+    .designer-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+    .left-column, .right-column {
+        width: 100%;
+    }
+}
+        body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  color: #333;
+  min-height: 100vh;
+}
+
+        /* Header */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    background: var(--color-light);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--color-dark);
+    cursor: pointer;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.8rem;
+}
+
+header nav ul a {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+header nav ul a:hover {
+    color: var(--color-primary);
+}
+
+/* Botones del header */
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: var(--color-light);
+}
+
+.btn-primary:hover {
+    opacity: 0.85;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background: var(--color-primary);
+    color: var(--color-light);
+}
+
+.btn-primary a,
+.btn-secondary a {
+    text-decoration: none;
+    color: inherit;
+}
+        /* botón secundario → texto color #6366f1 */
         .btn-secondary a {
             text-decoration: none;
             color: #6366f1;
@@ -21,18 +281,83 @@
             color: #ffffff;
             text-decoration: none;
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            padding: 1rem 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #201435;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #201435;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-secondary {
+            padding: 0.5rem 1.5rem;
+            border: 1px solid #6366f1;
+            background: white;
+            color: #6366f1;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            padding: 0.5rem 1.5rem;
+            background: #6636BD;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+  
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="logo">CODISEÑO</div>
+        <div class="logo"><a href="{% url 'logout' %}" style="color: black;text-decoration: none;">CODISEÑO</a></div>
         <nav>
             <ul>
                 <li><a href="#">Nuestro Propósito</a></li>
-                <li><a href="#">Para Mi Negocio</a></li>
-                <li><a href="#">Diseñadores</a></li>
-                <li><a href="#">Casos Reales</a></li>
+                <li><a href="#">Buscar Diseñadores</a></li>
                 <li><a href="#">Buscar Trabajo</a></li>
             </ul>
         </nav>
@@ -40,566 +365,74 @@
             <button class="btn-secondary">
                 <a href="{% url 'logout' %}">Cerrar Sesión</a>
             </button>
-            <button class="btn-primary"><a href="#">Mi Perfil</a></button>
+            <button class="btn-primary"><a href="{% url 'perfil_mipyme' %}">Editar Perfil</a></button>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Tu Negocio merece Diseño Profesional</h1>
-        <p>Crecimiento, Confianza, Clientes</p>
-        <p>Comenzar mi Brief Inteligente</p>
-    </section>
+    <main>
+        <div class="designer-layout">
 
-    <!-- Buttons Section -->
-    <section class="buttons-section">
-        <div class="hero-buttons">
-            <button class="hero-btn">Logo Profesional</button>
-            <button class="hero-btn">Quiero mejorar mis redes</button>
-            <button class="hero-btn">Diseño de producto</button>
-            <button class="hero-btn">Diseño de Producto</button>
-        </div>
-        <h2>Pasos para Iniciar con el Brief</h2>
-    </section>
+            <!-- COLUMNA IZQUIERDA -->
+            <div class="left-column">
 
-    <!-- Steps Section -->
-    <section class="steps">
-        <div class="steps-container">
-            <img src="{% static 'images/Group 414.png' %}" alt="Pasos para iniciar con el Brief" style="width: 100%; max-width: 1200px; height: auto; display: block; margin: 0 auto;">
-        </div>
-    </section>
-
-    <!-- Services Grid -->
-    <section class="services-grid">
-        <h2>¿Qué nos hace diferente?</h2>
-        <div class="grid">
-            <div class="service-card">
-                <div class="service-image">
-                    <img src="{% static 'images/Group 229.png' %}" alt="Precio Transparente">
+                <!-- FOTO DE PERFIL -->
+                <div class="avatar-box">
+                    {% if photo_url %}
+                        <img src="{{ photo_url }}" alt="Foto de perfil" class="avatar">
+                    {% else %}
+                        <img src="{% static 'images/pf_placeholder.png' %}" alt="Foto por defecto" class="avatar">
+                    {% endif %}
                 </div>
-                <h3>Precio Transparente</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-image">
-                    <img src="{% static 'images/Group 230.png' %}" alt="Precios claros">
+
+                <!-- SOBRE MI -->
+                <div class="section-box about-box">
+                    <h3>Sobre mi negocio</h3>
+                    <p>{{ about_me|default:"Aún no has escrito nada sobre tu negocio." }}</p>
                 </div>
-                <h3>Precios claros desde el principio</h3>
-            </div>
-            <div class="service-card">
-                <div class="service-image">
-                    <img src="{% static 'images/Group 232.png' %}" alt="Proceso Colaborativo">
+
+                <!-- MENSAJES -->
+                <div class="section-box messages-box">
+                    <h3>Mensajes</h3>
+                    <p>Aquí irán mensajes recibidos.</p>
                 </div>
-                <h3>Proceso Colaborativo</h3>
+
             </div>
-            <div class="service-card">
-                <div class="service-image">
-                    <img src="{% static 'images/Group 233.png' %}" alt="Rápido y Profesional">
+
+            <!-- COLUMNA DERECHA -->
+            <div class="right-column">
+                <div class="right-column">
+            <div class="portfolio-box">
+                <h2>Portafolio</h2>
+                {% for p in projects %}
+                            <div class="project-item card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ p.title }}</h5>
+                                    <p class="card-text">{{ p.description }}</p>
+                                    <p class="card-text"><strong>Rango de sueldo:</strong> {{ p.salary_min|clp_format }} - {{ p.salary_max|clp_format }}</p>
+                                </div>
+                            </div>
+                        {% empty %}
+                            <p>No tienes proyectos aún.</p>
+                        {% endfor %}
+                <div class="portfolio-list mt-3">
+                    
                 </div>
-                <h3>Rápido y Profesional</h3>
-            </div>
-            <div class="services-cta">
-                <button class="btn-services">Más</button>
+
             </div>
         </div>
-    </section>
-
-    <!-- Sección Testimonios -->
-    <section class="testimonials-gradient-section">
-    <div class="testimonials-gradient-container">
-        <div class="testimonials-gradient-header">
-        <h2 class="testimonials-gradient-title">Lo que dicen nuestros clientes</h2>
-        
-        <div class="testimonials-gradient-nav">
-            <button class="testimonials-gradient-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M15 18l-6-6 6-6"/>
-            </svg>
-            </button>
-            <button class="testimonials-gradient-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M9 18l6-6-6-6"/>
-            </svg>
-            </button>
-        </div>
-        </div>
-
-        <div class="testimonials-gradient-grid">
-        <div class="testimonial-gradient-card">
-            <div class="testimonial-gradient-stars">
-            <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
-            </div>
-
-            <p class="testimonial-gradient-quote">
-            "Encontré al diseñador perfecto para mi marca. El proceso fue simple y el resultado superó mis expectativas."
-            </p>
-
-            <div class="testimonial-gradient-author">
-            <span class="testimonial-gradient-name">María González</span>
-            <span class="testimonial-gradient-role">Emprendedora, Pastelería Dulce Momento</span>
-            </div>
-        </div>
-
-        <div class="testimonial-gradient-card">
-            <div class="testimonial-gradient-stars">
-            <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
-            </div>
-
-            <p class="testimonial-gradient-quote">
-            "Finalmente una plataforma donde encuentro clientes serios que valoran el diseño profesional."
-            </p>
-
-            <div class="testimonial-gradient-author">
-            <span class="testimonial-gradient-name">Carlos Fernández</span>
-            <span class="testimonial-gradient-role">Diseñador Gráfico</span>
-            </div>
-        </div>
-
-        <div class="testimonial-gradient-card">
-            <div class="testimonial-gradient-stars">
-            <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
-            <svg viewBox="0 0 20 20"><path d="M10 0l2.5 6.5L19 7.5l-5 4.5 1.5 7-5.5-3.5L4.5 19l1.5-7-5-4.5 6.5-1L10 0z"/></svg>
-            </div>
-
-            <p class="testimonial-gradient-quote">
-            "El brief inteligente me ayudó a comunicar exactamente lo que necesitaba. ¡Excelente experiencia!"
-            </p>
-
-            <div class="testimonial-gradient-author">
-            <span class="testimonial-gradient-name">Ana Martínez</span>
-            <span class="testimonial-gradient-role">Emprendedor, Boutique Estilo</span>
-            </div>
-        </div>
-        </div>
-
-        <div class="testimonials-gradient-dots">
-        <span class="testimonials-gradient-dot active-dot"></span>
-        <span class="testimonials-gradient-dot"></span>
-        <span class="testimonials-gradient-dot"></span>
-        <span class="testimonials-gradient-dot"></span>
-        </div>
-    </div>
-    </section>
-
-    <!-- Investment Section -->
-    <section class="investment">
-        <h2>Razones por las que el diseño es tu mejor inversión</h2>
-        
-        <div class="investment-content">
-            <div class="investment-info">
-                <h3>Heading</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <button class="btn-investment-more">Button Text</button>
-            </div>
-            
-            <div class="investment-image">
-                <img src="{% static 'images/descargar.png' %}" alt="Diseño profesional">
-            </div>
-        </div>
-        
-        <div class="pagination">
-            <button class="page-btn prev-page">
-                <span>&lt;</span>
-            </button>
-            <button class="page-btn page-number active">1</button>
-            <button class="page-btn page-number">2</button>
-            <button class="page-btn page-number">3</button>
-            <button class="page-btn page-number">4</button>
-            <button class="page-btn next-page">
-                <span>&gt;</span>
-            </button>
-        </div>
-    </section>
-
-    <!-- Popular Services -->
-    <section class="popular-services">
-        <h2>Servicios Populares</h2>
-        <p class="popular-subtitle">Soluciones a tus necesidades</p>
-        
-        <div class="carousel-wrapper">
-            <div class="service-boxes" id="serviceCarousel">
-                <div class="service-box service-box-main">
-                    <h3>Lo que tu negocio necesita</h3>
-                    <button class="btn-popular-primary">texto</button>
-                    <button class="btn-popular-secondary">texto texto</button>
-                </div>
-                <div class="service-box service-box-image">
-                    <img src="#" alt="Servicio 1">
-                </div>
-                <div class="service-box service-box-image">
-                    <img src="#" alt="Servicio 2">
-                </div>
-                <div class="service-box service-box-image">
-                    <img src="#" alt="Servicio 3">
-                </div>
+                        <!--
+                       
+                        
+                         -->
                 
-                <!-- Más servicios -->
-                <div class="service-box service-box-main">
-                    <h3>Otro servicio increíble</h3>
-                    <button class="btn-popular-primary">Ver más</button>
-                    <button class="btn-popular-secondary">Más info</button>
-                </div>
-                <div class="service-box service-box-image">
-                    <img src="#" alt="Servicio 4">
-                </div>
-                <div class="service-box service-box-image">
-                    <img src="#" alt="Servicio 5">
-                </div>
-                <div class="service-box service-box-image">
-                    <img src="#" alt="Servicio 6">
-                </div>
-            </div>
-            
-            <!-- Botón de navegación (círculo) -->
-            <button class="carousel-nav-btn" id="carouselNext">
-                <div class="circle-icon"></div>
-            </button>
-        </div>
-        
-        <!-- Indicadores de posición -->
-        <div class="carousel-indicators">
-            <span class="indicator active"></span>
-            <span class="indicator"></span>
-            <span class="indicator"></span>
-        </div>
-    </section>
 
-    <!-- Business Section -->
-    <section class="business-section">
-        <div class="business-content">
-            <h2>Tu Negocio, Bien Diseñado</h2>
-            <div class="business-placeholder">
-                <span>placeholder text</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process -->
-    <section class="process">
-        <h2>El Proceso Detrás del Servicio</h2>
-        <div class="timeline-wrapper">
-            <div class="timeline">
-                <div class="timeline-line"></div>
                 
-                <div class="timeline-item">
-                    <div class="timeline-circle active">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M5 13l4 4L19 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <div class="timeline-content">
-                        <p class="timeline-label">text</p>
-                        <h3 class="timeline-heading">Heading</h3>
-                        <p class="timeline-text">text</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-circle active">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M5 13l4 4L19 7" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <div class="timeline-content">
-                        <p class="timeline-label">text</p>
-                        <h3 class="timeline-heading">Heading</h3>
-                        <p class="timeline-text">text</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-circle">
-                        <span class="icon-placeholder">icon</span>
-                    </div>
-                    <div class="timeline-content">
-                        <p class="timeline-label">text</p>
-                        <h3 class="timeline-heading">Heading</h3>
-                        <p class="timeline-text">text</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-circle">
-                        <span class="icon-placeholder">icon</span>
-                    </div>
-                    <div class="timeline-content">
-                        <p class="timeline-label">text</p>
-                        <h3 class="timeline-heading">Heading</h3>
-                        <p class="timeline-text">text</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-circle">
-                        <span class="icon-placeholder">icon</span>
-                    </div>
-                    <div class="timeline-content">
-                        <p class="timeline-label">text</p>
-                        <h3 class="timeline-heading">Heading</h3>
-                        <p class="timeline-text">text</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-circle">
-                        <span class="icon-placeholder">icon</span>
-                    </div>
-                    <div class="timeline-content">
-                        <p class="timeline-label">text</p>
-                        <h3 class="timeline-heading">Heading</h3>
-                        <p class="timeline-text">text</p>
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Destinations -->
-    <section class="destinations">
-        <h2>Diseñadores Destacados</h2>
-        <p class="destinations-subtitle">Profesionales verificados listos para trabajar en tu proyecto</p>
-        
-        <div class="destination-grid">
-            <div class="destination-card">
-                <div class="destination-image">
-                    <img src="{% static 'images/descargar.png' %}" alt="Categoría 1">
-                </div>
-                <div class="destination-info">
-                    <h3>Heading</h3>
-                    <button class="destination-dropdown">⌄</button>
-                </div>
-            </div>
-            
-            <div class="destination-card">
-                <div class="destination-image">
-                    <img src="{% static 'images/descargar.png' %}" alt="Categoría 2">
-                </div>
-                <div class="destination-info">
-                    <h3>Heading</h3>
-                    <button class="destination-dropdown">⌄</button>
-                </div>
-            </div>
-            
-            <div class="destination-card">
-                <div class="destination-image">
-                    <img src="{% static 'images/descargar.png' %}" alt="Categoría 3">
-                </div>
-                <div class="destination-info">
-                    <h3>Heading</h3>
-                    <button class="destination-dropdown">⌄</button>
-                </div>
-            </div>
         </div>
-    </section>
+    </main>
 
-    <!-- Profiles -->
-    <section class="profiles">
-        <div class="profile-grid">
-            <div class="profile-card">
-                <div class="profile-image-container">
-                    <img src="{% static 'images/Rectangle 658.png' %}" alt="Luis Soto" class="profile-image">
-                </div>
-                <div class="profile-info">
-                    <div class="profile-header">
-                        <h3>Luis Soto</h3>
-                        <span class="verified-badge">✓</span>
-                    </div>
-                    
-                    <div class="profile-rating">
-                        <span class="rating-star">⭐</span>
-                        <span class="rating-score">4/5</span>
-                        <span class="rating-count">20</span>
-                    </div>
-                    
-                    <div class="profile-role">
-                        <span class="role-badge">Diseñador de Marcas</span>
-                    </div>
-                    
-                    <div class="profile-tags">
-                        <span class="tag">14 Habilidades</span>
-                        <span class="tag">12 Servicios</span>
-                    </div>
-                    
-                    <button class="btn-view-profile">Ver Perfil</button>
-                </div>
-            </div>
-            
-            <div class="profile-card">
-                <div class="profile-image-container">
-                    <img src="{% static 'images/Rectangle 658.png' %}" alt="Luis Soto" class="profile-image">
-                </div>
-                <div class="profile-info">
-                    <div class="profile-header">
-                        <h3>Luis Soto</h3>
-                        <span class="verified-badge">✓</span>
-                    </div>
-                    
-                    <div class="profile-rating">
-                        <span class="rating-star">⭐</span>
-                        <span class="rating-score">4/5</span>
-                        <span class="rating-count">20</span>
-                    </div>
-                    
-                    <div class="profile-role">
-                        <span class="role-badge">Diseñador de Marcas</span>
-                    </div>
-                    
-                    <div class="profile-tags">
-                        <span class="tag">14 Habilidades</span>
-                        <span class="tag">12 Servicios</span>
-                    </div>
-                    
-                    <button class="btn-view-profile">Ver Perfil</button>
-                </div>
-            </div>
-            
-            <div class="profile-card">
-                <div class="profile-image-container">
-                    <img src="{% static 'images/Rectangle 658.png' %}" alt="Luis Soto" class="profile-image">
-                </div>
-                <div class="profile-info">
-                    <div class="profile-header">
-                        <h3>Luis Soto</h3>
-                        <span class="verified-badge">✓</span>
-                    </div>
-                    
-                    <div class="profile-rating">
-                        <span class="rating-star">⭐</span>
-                        <span class="rating-score">4/5</span>
-                        <span class="rating-count">20</span>
-                    </div>
-                    
-                    <div class="profile-role">
-                        <span class="role-badge">Diseñador de Marcas</span>
-                    </div>
-                    
-                    <div class="profile-tags">
-                        <span class="tag">14 Habilidades</span>
-                        <span class="tag">12 Servicios</span>
-                    </div>
-                    
-                    <button class="btn-view-profile">Ver Perfil</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer CTA -->
-    <section class="footer-cta">
-        <div class="footer-cta-content">
-            <h2>Tu Negocio, Bien Diseñado</h2>
-            
-            <div class="cta-buttons-grid">
-                <button class="cta-pill">
-                    <span>placeholder text</span>
-                    <span class="cta-pill-icon">+</span>
-                </button>
-                <button class="cta-pill">
-                    <span>placeholder text</span>
-                    <span class="cta-pill-icon">+</span>
-                </button>
-                <button class="cta-pill">
-                    <span>placeholder text</span>
-                    <span class="cta-pill-icon">+</span>
-                </button>
-            </div>
-            
-            <div class="cta-buttons-row">
-                <button class="cta-pill">
-                    <span>placeholder text</span>
-                    <span class="cta-pill-icon">+</span>
-                </button>
-                <button class="cta-pill">
-                    <span>placeholder text</span>
-                    <span class="cta-pill-icon">+</span>
-                </button>
-                <button class="cta-pill">
-                    <span>placeholder text</span>
-                    <span class="cta-pill-icon">+</span>
-                </button>
-                <button class="cta-pill">
-                    <span>placeholder text</span>
-                    <span class="cta-pill-icon">+</span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Banner Text Section (antes del footer negro) -->
-<section class="banner-text-section">
-    <div class="banner-text-content">
-        <p>Banners estratégicos que llamen a la acción: "Calcula tu presupuesto", "Empieza tu match ahora".</p>
-    </div>
-</section>
-
-<!-- Black Footer -->
-<section class="footer-discover">
-    <h2>Descubre todo lo que necesitas</h2>
-    <p>Search across events, products, properties, and content to find exactly what you're looking for</p>
-    
-    <div class="search-container">
-        <div class="search-box">
-            <input type="text" placeholder="Search events, products, properties, content...">
-        </div>
-    </div>
-    
-    <div class="filter-options">
-        <button class="filter-btn">
-            <span></span> Cerca de mí
-        </button>
-        <select class="filter-select">
-            <option>Todos los tipos</option>
-            <option>Eventos</option>
-            <option>Productos</option>
-        </select>
-        <select class="filter-select">
-            <option>Relevancia</option>
-            <option>Precio</option>
-            <option>Fecha</option>
-        </select>
-        <input type="text" class="filter-input" placeholder="Filter by location...">
-        <select class="filter-select">
-            <option>Rango de precios</option>
-            <option>$0 - $100</option>
-            <option>$100 - $500</option>
-        </select>
-    </div>
-</section>
-
-<!-- Bottom Footer -->
-<footer class="bottom-footer">
-    <div class="footer-content">
-        <div class="footer-logo">
-            <h3>CODISEÑO</h3>
-        </div>
-        
-        <div class="footer-columns">
-            <div class="footer-column">
-                <a href="#" class="footer-link">text</a>
-            </div>
-            <div class="footer-column">
-                <a href="#" class="footer-link">text</a>
-            </div>
-            <div class="footer-column">
-                <a href="#" class="footer-link">text</a>
-            </div>
-            <div class="footer-column">
-                <a href="#" class="footer-link">text</a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-    <script src="{% static 'js/carrusel.js'%}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

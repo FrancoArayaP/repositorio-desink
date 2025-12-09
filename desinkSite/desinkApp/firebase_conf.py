@@ -1,11 +1,15 @@
-import firebase_admin
-from firebase_admin import credentials, firestore, auth, storage
+import pyrebase
 
-# Inicializar Firebase app
-cred = credentials.Certificate("C:\Users\Franco\Documents\proyecto titulo")
-firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://proyecto-de-titulo-fb092-default-rtdb.firebaseio.com/'
-})
+firebaseConfig = {
+  "apiKey": "AIzaSyATYekLCAB1shW9TlVdbQrjgyrE7PY-zdc",
+  "authDomain": "proyecto-titulo-bcf7e.firebaseapp.com",
+  "databaseURL": "https://proyecto-titulo-bcf7e-default-rtdb.firebaseio.com",
+  "projectId": "proyecto-titulo-bcf7e",
+  "storageBucket": "proyecto-titulo-bcf7e.firebasestorage.app",
+  "messagingSenderId": "566825435290",
+  "appId": "1:566825435290:web:a8f042d4d1b36c81331f23",
+  "measurementId": "G-PYYYRX57L5"
+}
 
-db = firestore.client()
-bucket = storage.bucket()
+firebase = pyrebase.initialize_app(firebaseConfig)
+storage = firebase.storage()
