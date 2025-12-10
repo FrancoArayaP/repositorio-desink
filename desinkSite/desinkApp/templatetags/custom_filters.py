@@ -11,3 +11,5 @@ def clp_format(value):
         return "${:,}".format(value).replace(",", ".")
     except (ValueError, TypeError):
         return value
+    
+

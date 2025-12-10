@@ -36,4 +36,20 @@ class Project(models.Model):
     def __str__(self):
         return f"{self.user.username} - {self.title}"
 
+class Conversation(models.Model):
+    participants = models.ManyToManyField(User, related_name="conversations")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Conversación {self.id}"
+
+
+class Message(models.Model):
+    conversation = models.ForeignKey(Conversation, related_name="messages", on_delete=models.CASCADE)
+    sender = models.ForeignKey(User, related_name="messages_sent", on_delete=models.CASCADE)
+    text = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Mensaje de {self.sender} en {self.conversation.id}"
 

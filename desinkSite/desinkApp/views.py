@@ -3,10 +3,12 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import login as auth_login, logout
-from .models import Portfolio, Project
-import pyrebase
+from .models import Portfolio, Project, Profile, Conversation, Message
+from django.utils import timezone
+from django.db.models import Q
 from .firebase_conf import storage, firebaseConfig
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -105,8 +107,6 @@ def soydisenador_view(request):
     }
 
     return render(request, "disenador.html", context)
-
-
 
 def mipyme_view(request):
     # limpiar mensajes previos
@@ -299,4 +299,70 @@ def eliminar_proyecto(request, project_id):
     proyecto.delete()
     messages.success(request, "Proyecto eliminado correctamente.")
     return redirect("perfil_mipyme")
+
+@login_required(login_url="login")
+def buscar_disenadores_view(request):
+    query = request.GET.get("q", "")
+
+    # filtrar perfiles de tipo 'designer'
+    designers_qs = Profile.objects.filter(user_type="designer")
+
+    if query:
+        designers_qs = designers_qs.filter(
+            Q(user__first_name__icontains=query) |
+            Q(user__last_name__icontains=query) |
+            Q(about_me__icontains=query)
+        )
+
+    designers = []
+    for d in designers_qs.select_related("user"):
+        if not hasattr(d, "user") or d.user is None:
+            continue
+
+        portfolios = Portfolio.objects.filter(user=d.user)
+
+        designers.append({
+            "id": d.user.id,
+            "nombre": d.user.first_name,
+            "apellido": d.user.last_name,
+            "photo_url": getattr(d, "photo_url", None),
+            "about_me": getattr(d, "about_me", ""),
+            "portfolios": portfolios,
+        })
+
+    context = {
+        "designers": designers,
+        "query": query,
+    }
+    return render(request, "buscar_disenadores.html", context)
+
+@login_required(login_url="login")
+def buscar_proyectos_view(request):
+    query = request.GET.get("q", "")
+
+    # filtrar proyectos
+    projects_qs = Project.objects.all()
+    if query:
+        projects_qs = projects_qs.filter(
+            Q(title__icontains=query) |
+            Q(description__icontains=query)
+        )
+
+    projects = []
+    for p in projects_qs.select_related("user__profile"):
+        projects.append({
+            "id": p.id,
+            "title": p.title,
+            "description": p.description,
+            "salary_min": p.salary_min,
+            "salary_max": p.salary_max,
+            "user": p.user,
+            "profile": getattr(p.user, "profile", None),
+        })
+
+    context = {
+        "projects": projects,
+        "query": query,
+    }
+    return render(request, "buscar_proyectos.html", context)
 

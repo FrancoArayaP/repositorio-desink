@@ -30,4 +30,7 @@ urlpatterns = [
     path("eliminar_portfolio/<int:portfolio_id>/", appViews.eliminar_portfolio, name="eliminar_portfolio"),
     path("perfil_mipyme/", appViews.perfil_mipyme, name="perfil_mipyme"),
     path("eliminar_proyecto/<int:project_id>/", appViews.eliminar_proyecto, name="eliminar_proyecto"),
+    path('buscar_disenadores/', appViews.buscar_disenadores_view, name='buscar_disenadores'),
+    path('buscar_proyectos/', appViews.buscar_proyectos_view, name='buscar_proyectos'),
+
 ]
