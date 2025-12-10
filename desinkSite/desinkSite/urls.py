@@ -32,5 +32,7 @@ urlpatterns = [
     path("eliminar_proyecto/<int:project_id>/", appViews.eliminar_proyecto, name="eliminar_proyecto"),
     path('buscar_disenadores/', appViews.buscar_disenadores_view, name='buscar_disenadores'),
     path('buscar_proyectos/', appViews.buscar_proyectos_view, name='buscar_proyectos'),
-
+    path("mensajes/", appViews.inbox, name="inbox"),
+    path("mensajes/start/<int:user_id>/", appViews.conversation_start, name="conversation_start"),
+    path("mensajes/<int:conversation_id>/", appViews.inbox, name="conversation_detail"),
 ]

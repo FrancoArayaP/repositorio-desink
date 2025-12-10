@@ -261,6 +261,12 @@
                             <h4>{{ p.title }}</h4>
                             <p>{{ p.description }}</p>
                             <p><strong>Rango de sueldo:</strong> {{ p.salary_min|clp_format }} - {{ p.salary_max|clp_format }}</p>
+                            {% if user.is_authenticated and p.user.id and user.id != p.user.id %}
+                                <a href="{% url 'conversation_start' p.user.id %}" class="btn btn-primary mt-2">
+                                    Enviar Mensaje
+                                </a>
+                            {% endif %}
+
                         </div>
 
                         <!-- Dropdown con información del perfil relacionado -->

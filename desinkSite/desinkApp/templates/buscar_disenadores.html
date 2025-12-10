@@ -259,7 +259,11 @@
                         <div class="designer-info">
                             <h4>{{ d.nombre }} {{ d.apellido }}</h4>
                             <p>{{ d.about_me|default:"Este diseñador aún no ha escrito nada sobre sí mismo." }}</p>
-
+                            {% if user.is_authenticated and d.id and user.id != d.id %}
+                                <a href="{% url 'conversation_start' d.id %}" class="btn btn-primary mt-2">
+                                    Enviar Mensaje
+                                </a>
+                            {% endif %}
                         </div>
 
                         <!-- Dropdown Portafolio -->

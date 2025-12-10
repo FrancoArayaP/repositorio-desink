@@ -9,6 +9,7 @@ from django.db.models import Q
 from .firebase_conf import storage, firebaseConfig
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
+from .utils import get_or_create_conversation
 
 
 
@@ -366,3 +367,42 @@ def buscar_proyectos_view(request):
     }
     return render(request, "buscar_proyectos.html", context)
 
+def inbox(request, conversation_id=None):
+    """
+    Vista principal: lista de conversaciones a la izquierda y chat actual a la derecha.
+    Si conversation_id es None muestra panel vacío a la derecha.
+    POST en esta vista crea un mensaje en la conversación actual.
+    """
+    # Todas las conversaciones del usuario (más recientes primero por último mensaje)
+    conversations = Conversation.objects.filter(participants=request.user).distinct().order_by('-created_at')
+
+    conversation = None
+    if conversation_id:
+        conversation = get_object_or_404(Conversation, id=conversation_id)
+        # seguridad: sólo participantes pueden ver
+        if not conversation.participants.filter(id=request.user.id).exists():
+            return redirect('inbox')
+
+        if request.method == "POST":
+            text = request.POST.get("text", "").strip()
+            if text:
+                Message.objects.create(conversation=conversation, sender=request.user, text=text)
+            return redirect('conversation_detail', conversation_id=conversation.id)
+
+    context = {
+        "conversations": conversations,
+        "conversation": conversation,
+    }
+    return render(request, "conversation_detail.html", context)
+
+@login_required
+def conversation_start(request, user_id):
+    """
+    Crear o recuperar conversación entre request.user y user_id, redirigir a detalle.
+    """
+    other = get_object_or_404(User, id=user_id)
+    if other == request.user:
+        return redirect('inbox')
+
+    conv = get_or_create_conversation(request.user, other)
+    return redirect('conversation_detail', conversation_id=conv.id)

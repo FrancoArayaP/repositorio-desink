@@ -41,8 +41,7 @@ class Conversation(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Conversación {self.id}"
-
+        return f"Conversation {self.id}"
 
 class Message(models.Model):
     conversation = models.ForeignKey(Conversation, related_name="messages", on_delete=models.CASCADE)
@@ -50,6 +49,9 @@ class Message(models.Model):
     text = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ("timestamp",)
+
     def __str__(self):
-        return f"Mensaje de {self.sender} en {self.conversation.id}"
+        return f"Message {self.id} by {self.sender}"
 
